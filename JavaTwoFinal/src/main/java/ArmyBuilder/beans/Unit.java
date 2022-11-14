@@ -1,10 +1,13 @@
 package ArmyBuilder.beans;
 
+import javax.persistence.Embeddable;
+
 /**
  * Kenneth Gisler - kgisler@dmacc.edu
  * CIS171 22149
  * Nov 11, 2022
  */
+@Embeddable
 public class Unit {
 	protected String unitName; //the units designation or name (Ex: "Crisis Battlesuits", "Leman Russ Battle Tank", "Warboss") 
 	protected int cost; //the prive of the unit (this could be the power level or point cost]

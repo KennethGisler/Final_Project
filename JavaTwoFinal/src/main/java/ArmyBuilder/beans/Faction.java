@@ -2,11 +2,14 @@ package ArmyBuilder.beans;
 
 import java.util.List;
 
+import javax.persistence.Embeddable;
+
 /**
  * Kenneth Gisler - kgisler@dmacc.edu
  * CIS171 22149
  * Nov 11, 2022
  */
+@Embeddable
 public class Faction {
 	private String factionName; //the name of the faction used (Tau, Imperial Guard, Orks... ) 
 	private List<Unit> roster; //the roster of units making up the army of this faction.

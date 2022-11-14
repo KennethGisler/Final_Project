@@ -1,10 +1,13 @@
 package ArmyBuilder.beans;
 
+import javax.persistence.Embeddable;
+
 /**
  * Kenneth Gisler - kgisler@dmacc.edu
  * CIS171 22149
  * Nov 11, 2022
  */
+@Embeddable
 public class Army {
 	private String  armyName; //this would be the name of the army that is built (like "Grom's Skull Crushers, or "The 178th Cadian Armord")
 	private Faction faction; //this is the object containing the Faction name and Unit list that makes up the army. 

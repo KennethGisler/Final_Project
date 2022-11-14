@@ -1,10 +1,13 @@
 package ArmyBuilder.beans;
 
+import javax.persistence.Embeddable;
+
 /**
  * Kenneth Gisler - kgisler@dmacc.edu
  * CIS171 22149
  * Nov 11, 2022
  */
+@Embeddable
 public class Elites extends Unit{
 	
 	

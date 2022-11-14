@@ -2,14 +2,26 @@ package ArmyBuilder.beans;
 
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
 /**
  * Kenneth Gisler - kgisler@dmacc.edu
  * CIS171 22149
  * Nov 11, 2022
  */
+@Entity
 public class User {
+	
+	@Id
+	@GeneratedValue
+	private long id;
 	private String userName; //the users personal user name
 	private String userPassword; //the users password to their account
+	@Autowired
 	private List<Army> usersArmies; //all of the users armies! (this will be the object displayed on the list of armies)
 	
 	//constructors
@@ -36,6 +48,9 @@ public class User {
 	public List<Army> getUsersArmies() {
 		return usersArmies;
 	}
+	public long getID() {
+		return this.id;
+	}
 	
 	//setters
 	public void setUserName(String userName) {
@@ -46,6 +61,9 @@ public class User {
 	}
 	public void setUsersArmies(List<Army> usersArmies) {
 		this.usersArmies = usersArmies;
+	}
+	public void setID(long id) {
+		this.id = id;
 	}
 	
 	//methods

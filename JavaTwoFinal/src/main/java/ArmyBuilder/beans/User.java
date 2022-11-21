@@ -2,9 +2,13 @@ package ArmyBuilder.beans;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -21,7 +25,9 @@ public class User {
 	private long id;
 	private String userName; //the users personal user name
 	private String userPassword; //the users password to their account
-	@Autowired
+	
+	@OneToMany
+	@JoinTable
 	private List<Army> usersArmies; //all of the users armies! (this will be the object displayed on the list of armies)
 	
 	//constructors

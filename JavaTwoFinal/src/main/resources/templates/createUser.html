@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<script type = "text/javascript">
+	function checkForm(form){
+		if(form.elements["username"].value == ""){
+			alert("Error: Username input is empty!");
+			form.elements["username"].focus();
+			return false;
+		}
+	
+		if(form.elements["password"].value == ""){
+			alert("Error: Password input is empty!");
+			form.elements["password"].focus();
+			return false;
+		}
+
+	return true
+}
+</script>
+<head>
+<meta charset="ISO-8859-1">
+<title>Let's Make a new user!</title>
+</head>
+<body>
+<h1>Enter your new profile name and password:</h1>
+	<form th:object="${newUser}" th:action="newUser" method="get" onsubmit= "return checkForm(this);">
+		Username: <input name="userName" type="text"> </br>
+		Password: <input name="userPassword" type="text"> </br>
+		<input name="submit" type ="submit" value="submit" />
+	</form>
+</body>
+</html>

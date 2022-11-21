@@ -13,20 +13,18 @@ public class Troops extends Unit {
 	//constructors
 	public Troops() {
 		super();
+		this.unitType = "Troops";
 	}
 	public Troops(String unitName, int cost) {
 		this.unitName = unitName;
 		this.cost = cost;
+		this.unitType = "Troops";
 	}
 	
 	
 	//methods
 		@Override
 		public String toString() {
-			return "Troops [unitName=" + unitName + ", cost=" + cost + ", type=" + this.getType() +"]";
-		}
-		@Override
-		public String getType() {
-			return "Troops";
+			return "Troops [unitName=" + unitName + ", cost=" + cost + ", type=" + this.unitType +"]";
 		}
 }

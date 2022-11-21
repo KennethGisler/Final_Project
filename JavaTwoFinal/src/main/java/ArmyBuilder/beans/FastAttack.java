@@ -13,19 +13,18 @@ public class FastAttack extends Unit{
 	//constructors
 	public FastAttack() {
 		super();
+		this.unitType = "Fast Attack";
 	}
 	public FastAttack(String unitName, int cost) {
 		this.unitName = unitName;
 		this.cost = cost;
+		this.unitType = "Fast Attack";
 	}
 	
 	//methods
 		@Override
 		public String toString() {
-			return "FastAttack [unitName=" + unitName + ", cost=" + cost + ", type=" + this.getType() +"]";
+			return "FastAttack [unitName=" + unitName + ", cost=" + cost + ", type=" + this.unitType +"]";
 		}
-		@Override
-		public String getType() {
-			return "Fast Attack";
-		}
+
 }

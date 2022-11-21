@@ -13,19 +13,17 @@ public class HeavySupport extends Unit{
 	//constructors
 	public HeavySupport() {
 		super();
+		this.unitType = "Heavy Support";
 	}
 	public HeavySupport(String unitName, int cost) {
 		this.unitName = unitName;
 		this.cost = cost;
+		this.unitType = "Heavy Support";
 	}
 	
 	//methods
 		@Override
 		public String toString() {
-			return "HeavySupport [unitName=" + unitName + ", cost=" + cost + ", type=" + this.getType() +"]";
-		}
-		@Override
-		public String getType() {
-			return "Heavy Support";
+			return "HeavySupport [unitName=" + unitName + ", cost=" + cost + ", type=" + this.unitType +"]";
 		}
 }

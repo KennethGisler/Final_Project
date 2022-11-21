@@ -13,20 +13,18 @@ public class LordOfWar extends Unit {
 	//constructors
 	public LordOfWar() {
 		super();
+		this.unitType = "Lord Of War";
 	}
 
 	public LordOfWar(String unitName, int cost) {
 		this.unitName = unitName;
 		this.cost = cost;
+		this.unitType = "Lord Of War";
 	}
 
 	//methods
 	@Override
 	public String toString() {
-		return "LordsOfWar: [unitName=" + unitName + ", cost=" + cost + ", type=" + this.getType() +"]";
-	}
-	@Override
-	public String getType() {
-		return "Lord Of War";
+		return "LordsOfWar: [unitName=" + unitName + ", cost=" + cost + ", type=" + this.unitType +"]";
 	}
 }

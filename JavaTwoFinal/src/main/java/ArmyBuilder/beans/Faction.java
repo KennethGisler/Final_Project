@@ -3,6 +3,8 @@ package ArmyBuilder.beans;
 import java.util.List;
 
 import javax.persistence.Embeddable;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 /**
  * Kenneth Gisler - kgisler@dmacc.edu
@@ -11,14 +13,16 @@ import javax.persistence.Embeddable;
  */
 @Embeddable
 public class Faction {
+	
 	private String factionName; //the name of the faction used (Tau, Imperial Guard, Orks... ) 
-	private List<Unit> roster; //the roster of units making up the army of this faction.
+	//@OneToMany
+	private Unit roster; //the roster of units making up the army of this faction.
 	
 	//constructors
 	public Faction() { //default no arg constructor
 		super();
 	}
-	public Faction(String factionName, List<Unit> roster) { //full constructor
+	public Faction(String factionName, Unit roster) { //full constructor
 		this.factionName = factionName;
 		this.roster = roster;
 	}
@@ -30,7 +34,7 @@ public class Faction {
 	public String getFactionName() {
 		return factionName;
 	}
-	public List<Unit> getRoster() {
+	public Unit getRoster() {
 		return roster;
 	}
 	
@@ -38,7 +42,7 @@ public class Faction {
 	public void setFactionName(String factionName) {
 		this.factionName = factionName;
 	}
-	public void setRoster(List<Unit> roster) {
+	public void setRoster(Unit roster) {
 		this.roster = roster;
 	}
 	

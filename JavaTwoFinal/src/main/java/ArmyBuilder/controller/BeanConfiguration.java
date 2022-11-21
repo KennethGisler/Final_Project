@@ -1,5 +1,8 @@
 package ArmyBuilder.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -79,6 +82,11 @@ public class BeanConfiguration {
 		@Bean
 		public LordOfWar lordOfWAr() {	//lord of war bean
 			LordOfWar bean = new LordOfWar();
+			return bean;
+		}
+		
+		@Bean List<Army> armyList(){ //temporoary [might delete] DON'T PUSH!
+			List<Army> bean = new ArrayList<Army>();
 			return bean;
 		}
 }

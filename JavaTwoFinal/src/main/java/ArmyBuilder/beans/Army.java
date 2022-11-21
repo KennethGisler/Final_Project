@@ -1,15 +1,25 @@
 package ArmyBuilder.beans;
 
 import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * Kenneth Gisler - kgisler@dmacc.edu
  * CIS171 22149
  * Nov 11, 2022
  */
-@Embeddable
+@Entity
 public class Army {
+	@Id
+	@GeneratedValue
+	long id;
 	private String  armyName; //this would be the name of the army that is built (like "Grom's Skull Crushers, or "The 178th Cadian Armord")
+	private int pointsTotal; //total cost of the army! [may be removed]
+	//@Autowired
 	private Faction faction; //this is the object containing the Faction name and Unit list that makes up the army. 
 	
 	//constructors
@@ -33,6 +43,9 @@ public class Army {
 	}
 	public Faction getFaction() {
 		return faction;
+	}
+	public int getPointsTotal() {
+		return this.pointsTotal;
 	}
 	
 	//setters

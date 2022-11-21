@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<script type = "text/javascript" >
+	function checkForm(form){
+		if(form.elements["username"].value == ""){
+			alert("Error: Username input is empty!");
+			form.elements["username"].focus();
+			return false;
+		}
+	
+		if(form.elements["password"].value == ""){
+			alert("Error: Password input is empty!");
+			form.elements["password"].focus();
+			return false;
+		}
+	
+		return true
+	}
+</script>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login</title>
+</head>
+<body>
+<h1>Welcome to 40k army builder!</h1>
+<p>Please login to continue.</p>
+<form action="login" method="post" onsubmit= "return checkForm(this);">
+	Username: <input name="username" type="text" /> </br>
+	Password: <input name="password" type="text" /> <br>
+	<input name="submit" type="submit" value="submit" /> 
+</form>
+</br>
+<p>Don't have an account?</p> 
+<form action="newUser" method=post>
+	<input name="submit" type="submit" value="Make one!" />
+</form>
+
+</body>
+</html>

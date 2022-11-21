@@ -14,19 +14,17 @@ public class Elites extends Unit{
 	//constructos
 	public Elites() {
 		super();
+		this.unitType = "Elites";
 	}
 	public Elites(String unitName, int cost) {
 		this.unitName = unitName;
 		this.cost = cost;
+		this.unitType = "Elites";
 	}
 	
 	//methods
 		@Override
 		public String toString() {
-			return "Elites [unitName=" + unitName + ", cost=" + cost + ", type=" + this.getType() +"]";
-		}
-		@Override
-		public String getType() {
-			return "Elites";
+			return "Elites [unitName=" + unitName + ", cost=" + cost + ", type=" + this.unitType  +"]";
 		}
 }

@@ -18,8 +18,8 @@ import ArmyBuilder.beans.Troops;
 public class Unit {
 	@Id
 	@GeneratedValue
-	private Long id;
-	@Autowired
+	private long id;
+	/*@Autowired
 	private Troops troops;
 	@Autowired
 	private HeavySupport heavySupport;
@@ -31,5 +31,5 @@ public class Unit {
 	private DedicatedTransport dt;
 	@Autowired
 	private LordOfWar low;
-	
+	*/
 }

@@ -8,6 +8,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,11 +24,11 @@ public class Army {
 	@GeneratedValue
 	long id;
 	private String  armyName; //this would be the name of the army that is built (like "Grom's Skull Crushers, or "The 178th Cadian Armord")
-	private int pointsTotal; //total cost of the army! [may be removed]
+	private int pointsTotal; //total cost of the army! 
 	private String factionName;
-	//@OneToOne(fetch = FetchType.LAZY) I'ma figure this out wiht the porfessor 11/23/22
-	//@JoinTable
-	//private List<Unit> roster;
+	@OneToMany
+	@JoinTable(name = "unit")
+	private List<Unit> roster;
 	
 	
 }

@@ -15,7 +15,7 @@ import ArmyBuilder.repository.ContactRepository;
 
 @Controller
 public class WebController {
-
+  
 	@Autowired //communicates with the repository
 	ContactRepository repo;
 	
@@ -34,7 +34,7 @@ public class WebController {
 	
 	@PostMapping("/login") //this is called to login from the login page!
 	public String login(Model model) {
-		String test = (String) model.getAttribute("username");
+		String test = (String) model.getAttribute("username"); 
 		System.out.println(test);
 		if(repo.findAll().isEmpty()) {
 			return createUser(model);

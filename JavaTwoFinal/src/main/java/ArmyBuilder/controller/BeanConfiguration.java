@@ -8,7 +8,6 @@ import org.springframework.context.annotation.Configuration;
 
 import ArmyBuilder.beans.Army;
 import ArmyBuilder.beans.DedicatedTransport;
-import ArmyBuilder.beans.Faction;
 import ArmyBuilder.beans.FastAttack;
 import ArmyBuilder.beans.HQ;
 import ArmyBuilder.beans.HeavySupport;
@@ -34,12 +33,6 @@ public class BeanConfiguration {
 		@Bean
 		public Army army() { 	//army bean
 			Army bean = new Army();
-			return bean;
-		}
-		
-		@Bean
-		public Faction faction() {	//faction bean
-			Faction bean = new Faction();
 			return bean;
 		}
 		
@@ -85,8 +78,8 @@ public class BeanConfiguration {
 			return bean;
 		}
 		
-		@Bean List<Army> armyList(){ //temporoary [might delete] DON'T PUSH!
+		/*@Bean List<Army> armyList(){ //temporoary [might delete] 
 			List<Army> bean = new ArrayList<Army>();
 			return bean;
-		}
+		}*/
 }

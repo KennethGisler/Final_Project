@@ -8,23 +8,70 @@ import javax.persistence.Embeddable;
  * Nov 11, 2022
  */
 @Embeddable
-public class FastAttack extends Unit{
-
+public class FastAttack{
+	private String fa1, fa2,fa3;
+	int cost1, cost2, cost3;
+	
 	//constructors
 	public FastAttack() {
 		super();
-		this.unitType = "Fast Attack";
 	}
-	public FastAttack(String unitName, int cost) {
-		this.unitName = unitName;
-		this.cost = cost;
-		this.unitType = "Fast Attack";
+	public FastAttack(String fa1, String fa2, String fa3, int cost1, int cost2, int cost3) {
+		super();
+		this.fa1 = fa1;
+		this.fa2 = fa2;
+		this.fa3 = fa3;
+		this.cost1 = cost1;
+		this.cost2 = cost2;
+		this.cost3 = cost3;
+	}
+	
+	//getters
+	public String getFa1() {
+		return fa1;
+	}
+	public String getFa2() {
+		return fa2;
+	}
+	public String getFa3() {
+		return fa3;
+	}
+	public int getCost1() {
+		return cost1;
+	}
+	public int getCost2() {
+		return cost2;
+	}
+	public int getCost3() {
+		return cost3;
+	}
+	
+	//setters
+	public void setFa1(String fa1) {
+		this.fa1 = fa1;
+	}
+	public void setFa2(String fa2) {
+		this.fa2 = fa2;
+	}
+	public void setFa3(String fa3) {
+		this.fa3 = fa3;
+	}
+	public void setCost1(int cost1) {
+		this.cost1 = cost1;
+	}
+	public void setCost2(int cost2) {
+		this.cost2 = cost2;
+	}
+	public void setCost3(int cost3) {
+		this.cost3 = cost3;
 	}
 	
 	//methods
-		@Override
-		public String toString() {
-			return "FastAttack [unitName=" + unitName + ", cost=" + cost + ", type=" + this.unitType +"]";
-		}
+	@Override
+	public String toString() {
+		return "FastAttack [fa1=" + fa1 + ", fa2=" + fa2 + ", fa3=" + fa3 + ", cost1=" + cost1 + ", cost2=" + cost2
+				+ ", cost3=" + cost3 + "]";
+	}
 
+	
 }

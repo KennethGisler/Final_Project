@@ -10,7 +10,7 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class DedicatedTransport{
 	private String dt1, dt2, dt3, dt4, dt5, dt6;
-	private int cost1, cost2, cost3, cost4, cost5, cost6;
+	private int tdCost1, tdCost2, tdCost3,tdCost4, tdCost5,tdCost6;
 	
 	//constructors 
 	public DedicatedTransport() {
@@ -25,12 +25,12 @@ public class DedicatedTransport{
 		this.dt4 = dt4;
 		this.dt5 = dt5;
 		this.dt6 = dt6;
-		this.cost1 = cost1;
-		this.cost2 = cost2;
-		this.cost3 = cost3;
-		this.cost4 = cost4;
-		this.cost5 = cost5;
-		this.cost6 = cost6;
+		this.tdCost1 = cost1;
+		this.tdCost2 = cost2;
+		this.tdCost3 = cost3;
+		this.tdCost4 = cost4;
+		this.tdCost5 = cost5;
+		this.tdCost6 = cost6;
 	}
 	
 	//getters 
@@ -53,22 +53,22 @@ public class DedicatedTransport{
 		return dt6;
 	}
 	public int getCost1() {
-		return cost1;
+		return tdCost1;
 	}
 	public int getCost2() {
-		return cost2;
+		return tdCost2;
 	}
 	public int getCost3() {
-		return cost3;
+		return tdCost3;
 	}
 	public int getCost4() {
-		return cost4;
+		return tdCost4;
 	}
 	public int getCost5() {
-		return cost5;
+		return tdCost5;
 	}
 	public int getCost6() {
-		return cost6;
+		return tdCost6;
 	}
 	
 	//setters
@@ -91,30 +91,30 @@ public class DedicatedTransport{
 		this.dt6 = dt6;
 	}
 	public void setCost1(int cost1) {
-		this.cost1 = cost1;
+		this.tdCost1 = cost1;
 	}
 	public void setCost2(int cost2) {
-		this.cost2 = cost2;
+		this.tdCost2 = cost2;
 	}
 	public void setCost3(int cost3) {
-		this.cost3 = cost3;
+		this.tdCost3 = cost3;
 	}
 	public void setCost4(int cost4) {
-		this.cost4 = cost4;
+		this.tdCost4 = cost4;
 	}
 	public void setCost5(int cost5) {
-		this.cost5 = cost5;
+		this.tdCost5 = cost5;
 	}
 	public void setCost6(int cost6) {
-		this.cost6 = cost6;
+		this.tdCost6 = cost6;
 	}
 
 	//methods
 	@Override
 	public String toString() {
 		return "DedicatedTransport [dt1=" + dt1 + ", dt2=" + dt2 + ", dt3=" + dt3 + ", dt4=" + dt4 + ", dt5=" + dt5
-				+ ", dt6=" + dt6 + ", cost1=" + cost1 + ", cost2=" + cost2 + ", cost3=" + cost3 + ", cost4=" + cost4
-				+ ", cost5=" + cost5 + ", cost6=" + cost6 + "]";
+				+ ", dt6=" + dt6 + ", cost1=" + tdCost1 + ", cost2=" + tdCost2 + ", cost3=" + tdCost3 + ", cost4=" + tdCost4
+				+ ", cost5=" + tdCost5 + ", cost6=" + tdCost6 + "]";
 	}
 	
 	

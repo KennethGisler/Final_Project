@@ -10,7 +10,7 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class HeavySupport{
 	private String hs1, hs2, hs3;
-	private int cost1, cost2, cost3;
+	private int hsCost1, hsCost2, hsCost3;
 	
 	//constructors
 	public HeavySupport() {
@@ -21,9 +21,9 @@ public class HeavySupport{
 		this.hs1 = hs1;
 		this.hs2 = hs2;
 		this.hs3 = hs3;
-		this.cost1 = cost1;
-		this.cost2 = cost2;
-		this.cost3 = cost3;
+		this.hsCost1 = cost1;
+		this.hsCost2 = cost2;
+		this.hsCost3 = cost3;
 	}
 	
 	//getters
@@ -37,13 +37,13 @@ public class HeavySupport{
 		return hs3;
 	}
 	public int getCost1() {
-		return cost1;
+		return hsCost1;
 	}
 	public int getCost2() {
-		return cost2;
+		return hsCost2;
 	}
 	public int getCost3() {
-		return cost3;
+		return hsCost3;
 	}
 	
 	//setters
@@ -57,20 +57,20 @@ public class HeavySupport{
 		this.hs3 = hs3;
 	}
 	public void setCost1(int cost1) {
-		this.cost1 = cost1;
+		this.hsCost1 = cost1;
 	}
 	public void setCost2(int cost2) {
-		this.cost2 = cost2;
+		this.hsCost2 = cost2;
 	}
 	public void setCost3(int cost3) {
-		this.cost3 = cost3;
+		this.hsCost3 = cost3;
 	}
 	
 	//methods
 	@Override
 	public String toString() {
-		return "HeavySupport [hs1=" + hs1 + ", hs2=" + hs2 + ", hs3=" + hs3 + ", cost1=" + cost1 + ", cost2=" + cost2
-				+ ", cost3=" + cost3 + "]";
+		return "HeavySupport [hs1=" + hs1 + ", hs2=" + hs2 + ", hs3=" + hs3 + ", cost1=" + hsCost1 + ", cost2=" + hsCost2
+				+ ", cost3=" + hsCost3 + "]";
 	}
 	
 	

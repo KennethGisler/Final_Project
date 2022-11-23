@@ -19,7 +19,7 @@ public class Unit {
 	@Id
 	@GeneratedValue
 	private long id;
-	/*@Autowired
+	@Autowired
 	private Troops troops;
 	@Autowired
 	private HeavySupport heavySupport;
@@ -31,5 +31,5 @@ public class Unit {
 	private DedicatedTransport dt;
 	@Autowired
 	private LordOfWar low;
-	*/
+	
 }

@@ -10,7 +10,7 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class Troops  {
 	String troop1,troop2,troop3,troop4,troop5,troop6;
-	int cost1 ,cost2, cost3, cost4, cost5 ,cost6;
+	int tCost1 ,tCost2, tCost3, tCost4, tCost5 ,tCost6;
 	
 	//constructors
 	public Troops() {
@@ -25,17 +25,17 @@ public class Troops  {
 		this.troop4 = troop4;
 		this.troop5 = troop5;
 		this.troop6 = troop6;
-		this.cost1 = cost1;
-		this.cost2 = cost2;
-		this.cost3 = cost3;
-		this.cost4 = cost4;
-		this.cost5 = cost5;
-		this.cost6 = cost6;
+		this.tCost1 = cost1;
+		this.tCost2 = cost2;
+		this.tCost3 = cost3;
+		this.tCost4 = cost4;
+		this.tCost5 = cost5;
+		this.tCost6 = cost6;
 	}
 	public Troops(String troop1, int cost1) {
 		super();
 		this.troop1 = troop1;
-		this.cost1 = cost1;
+		this.tCost1 = cost1;
 	}
 	
 	//getters 
@@ -58,22 +58,22 @@ public class Troops  {
 		return troop6;
 	}
 	public int getCost1() {
-		return cost1;
+		return tCost1;
 	}
 	public int getCost2() {
-		return cost2;
+		return tCost2;
 	}
 	public int getCost3() {
-		return cost3;
+		return tCost3;
 	}
 	public int getCost4() {
-		return cost4;
+		return tCost4;
 	}
 	public int getCost5() {
-		return cost5;
+		return tCost5;
 	}
 	public int getCost6() {
-		return cost6;
+		return tCost6;
 	}
 	
 	//setters
@@ -96,30 +96,30 @@ public class Troops  {
 		this.troop6 = troop6;
 	}
 	public void setCost1(int cost1) {
-		this.cost1 = cost1;
+		this.tCost1 = cost1;
 	}
 	public void setCost2(int cost2) {
-		this.cost2 = cost2;
+		this.tCost2 = cost2;
 	}
 	public void setCost3(int cost3) {
-		this.cost3 = cost3;
+		this.tCost3 = cost3;
 	}
 	public void setCost4(int cost4) {
-		this.cost4 = cost4;
+		this.tCost4 = cost4;
 	}
 	public void setCost5(int cost5) {
-		this.cost5 = cost5;
+		this.tCost5 = cost5;
 	}
 	public void setCost6(int cost6) {
-		this.cost6 = cost6;
+		this.tCost6 = cost6;
 	}
 	
 	//methods
 	@Override
 	public String toString() {
 		return "Troops [troop1=" + troop1 + ", troop2=" + troop2 + ", troop3=" + troop3 + ", troop4=" + troop4
-				+ ", troop5=" + troop5 + ", troop6=" + troop6 + ", cost1=" + cost1 + ", cost2=" + cost2 + ", cost3="
-				+ cost3 + ", cost4=" + cost4 + ", cost5=" + cost5 + ", cost6=" + cost6 + "]";
+				+ ", troop5=" + troop5 + ", troop6=" + troop6 + ", cost1=" + tCost1 + ", cost2=" + tCost2 + ", cost3="
+				+ tCost3 + ", cost4=" + tCost4 + ", cost5=" + tCost5 + ", cost6=" + tCost6 + "]";
 	}
 
 	

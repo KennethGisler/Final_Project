@@ -10,7 +10,7 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class HQ {
 	private String hq1,hq2,hq3;
-	private int cost1, cost2, cost3;
+	private int hqCost1, hqCost2, hqCost3;
 	
 	//constructor
 	public HQ() {
@@ -21,9 +21,9 @@ public class HQ {
 		this.hq1 = hq1;
 		this.hq2 = hq2;
 		this.hq3 = hq3;
-		this.cost1 = cost1;
-		this.cost2 = cost2;
-		this.cost3 = cost3;
+		this.hqCost1 = cost1;
+		this.hqCost2 = cost2;
+		this.hqCost3 = cost3;
 	}
 	
 	//getters
@@ -37,13 +37,13 @@ public class HQ {
 		return hq3;
 	}
 	public int getCost1() {
-		return cost1;
+		return hqCost1;
 	}
 	public int getCost2() {
-		return cost2;
+		return hqCost2;
 	}
 	public int getCost3() {
-		return cost3;
+		return hqCost3;
 	}
 	
 	//setters
@@ -57,20 +57,20 @@ public class HQ {
 		this.hq3 = hq3;
 	}
 	public void setCost1(int cost1) {
-		this.cost1 = cost1;
+		this.hqCost1 = cost1;
 	}
 	public void setCost2(int cost2) {
-		this.cost2 = cost2;
+		this.hqCost2 = cost2;
 	}
 	public void setCost3(int cost3) {
-		this.cost3 = cost3;
+		this.hqCost3 = cost3;
 	}
 	
 	//methods
 	@Override
 	public String toString() {
-		return "HQ [hq1=" + hq1 + ", hq2=" + hq2 + ", hq3=" + hq3 + ", cost1=" + cost1 + ", cost2=" + cost2 + ", cost3="
-				+ cost3 + "]";
+		return "HQ [hq1=" + hq1 + ", hq2=" + hq2 + ", hq3=" + hq3 + ", cost1=" + hqCost1 + ", cost2=" + hqCost2 + ", cost3="
+				+ hqCost3 + "]";
 	}
 
 	

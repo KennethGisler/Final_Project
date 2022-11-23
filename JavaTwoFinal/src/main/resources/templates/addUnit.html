@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html>
+    
+<head>
+    <!-- View Port Stuff-->
+    <meta charset="utf-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!--<link rel="stylesheet" type="text/css" href="css/stylesheet.css">!-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@700&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
+    <!--JS For Factions-->
+    <script src = "../js/factionArray.js"></script>
+    <!--JS for Faction Units-->
+    <script src = "../js/asmUnitArray.js"></script>
+    <script src = "../js/orksUnitArray.js"></script>
+    <script src = "../js/tauEmpireUnitArray.js"></script>
+    <meta charset="UTF-8">
+
+    <meta name="description" content="Add a bunch of units">
+
+    <meta name="keywords" content="school, grades, websites, javascript, turtles">
+
+    <title>Army Builder Test</title>
+
+<script>
+const myUnitList = [];
+const myUnitCost = [];
+const myCostTotal = [];
+
+
+//This loads the factions up.
+function loadFactions(){
+    for(var x=0; x<factions.length;x++){
+        document.write("<option id="+"factionChoice" + " value=" + factionValue[x]+">" + factions[x]+"</options>");
+    }
+}
+
+//This picks the faction.
+function chooseUnitsToList(){
+
+    //checks the faction value
+var factionValue = document.getElementById("selectFaction").value;
+
+    //if a faction is selected
+if(factionValue === "tau" || factionValue === "orks" || factionValue === "astram"){
+    //Creates the <select id=unitDisplayer></select>
+    
+    document.getElementById("factionUnitBox").innerHTML = "<select id ="+"unitDisplayer></select>";
+    //Also erases error if proper option is selected
+    document.getElementById("error").innerHTML = "";
+    //Now we populate id unitDisplayer with a new function
+    populateFactionUnitList();
+} else {
+    //returns error
+    document.getElementById("error").innerHTML ="<h1>Pick a Faction</h1>"
+    //gets rid of <select>
+    document.getElementById("factionUnitBox").innerHTML="";
+}
+
+}
+//This is the one that will check which faction you have and pull up a method to each individual faction unit list.
+function populateFactionUnitList(){
+
+    //checks the faction value
+var factionValue = document.getElementById("selectFaction").value;
+if (factionValue==="tau"){
+    fillTau();
+} if(factionValue==="astram"){
+    fillAsm();
+} if(factionValue==="orks"){
+    fillOrk();
+}
+
+
+}
+//Adds id="unit" to the list
+function fillUnitList(){
+var result = "";
+for(let i=0; i<myUnitList.length;i++){
+    result += "<option id="+"unit"+">" + myUnitList[i].slice(0,-9)+"</option>"
+}
+document.getElementById("addedUnits").innerHTML = result;
+return;
+}
+//adds id="cost" to the list
+function fillCostList(){
+    var result = "";
+for(let i=0; i<myUnitCost.length;i++){
+    let text = myUnitList[i];
+    result += "<option id="+"cost"+">" + myUnitList[i].slice(-2)+"</option>"
+}
+document.getElementById("addedCost").innerHTML = result;
+
+return;
+}
+function fillTotal(){
+var total = "";
+for(let i=1;i<myCostTotal.length;i++){
+    
+
+    myCostTotal[i] = myCostTotal[i]+myCostTotal[i-1];
+    total = myCostTotal[1];
+}
+
+document.getElementById("totalCost").innerHTML = total;
+
+
+}
+//adds the unit to the Unit List
+function addToUnitList(inUnit){
+myUnitList.push(inUnit);
+fillUnitList();
+
+return;
+}
+//adds the cost to the Cost List
+function addToCostList(inCost){
+myUnitCost.push(inCost);
+fillCostList();
+}
+
+function addTotalToCounter(inTtl){
+myCostTotal.push(inTtl);
+fillTotal();
+
+
+
+}
+
+
+</script>
+</head>
+<body>
+
+
+<div class="header">
+    <h1>Add a Unit</h1>
+    <h3>Army Builder Testing</h3>
+  </div>
+
+
+    <div class="box">
+        <div class="content">
+            <h1>The Unit List</h1>
+<form id="form1" name="form1" method="post" action="">
+  <p>Please select a Faction: 
+    <!--This will choose the faction and display the faction UnitList Methods-->
+    <select name="selectFaction" id="selectFaction" onchange="chooseUnitsToList()">
+                                <!--This is the span for the list of factions-->
+    	Please select a Faction:
+
+        <script>loadFactions();</script>
+
+    </select>
+  </p>                          <!--This is the span for the unit display-->
+    <p id = "availUnits">The Available Units Are: 
+        <span id = "error"></span>
+        <span id = "factionUnitBox">
+            <!--View "chooseUnitsToList()"-->
+        </span>
+        
+        
+    </p>
+  <p>
+    <input type="reset" name="button2" id="button2" value="Reset" />
+    <input type="button" value="Add Unit" onclick="addToUnitList(document.getElementById('unitDisplayer').value); addToCostList(document.getElementById('unitDisplayer').value); 
+    addTotalToCounter(parseInt(document.getElementById('addedCost').innerText));">
+  </p>
+</form>
+
+        </div> 
+    </div>
+    <div class="box">
+<form id="form2" name="form2" method="post" action="">
+        <div class="content">
+            <h1>Added Units</h1>
+            <span id ="addedUnits"></span>
+            </form>
+        </div> 
+        <div class="content">
+            <h1>Cost</h1>
+            <span id ="addedCost"></span>
+        </div> 
+        <div class="content">
+            <h1>Total Cost</h1>
+            <span id ="totalCost"></span>
+            
+        </div>
+
+    </form>
+    </div>
+
+</body>
+
+    <footer>
+
+    </footer>
+    
+</html>

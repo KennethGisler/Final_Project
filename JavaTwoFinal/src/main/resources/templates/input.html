@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>What does the customer want?</title>
+
+<
+
+</head>
+<body>
+<form th:object="newUnit" th:action="@{/update/{id}(id=${newUnit.id})}" method='POST'>
+
+<input name="submit" type="submit" value="submit"/>
+
+</form>
+<a href = "viewPastOrders">View Past Orders</a>
+</body>
+
+
+</html>

@@ -11,13 +11,19 @@ import org.springframework.web.bind.annotation.PostMapping;
 import ArmyBuilder.beans.Army;
 import ArmyBuilder.beans.Unit;
 import ArmyBuilder.beans.User;
-import ArmyBuilder.repository.ContactRepository;
+import ArmyBuilder.repository.ArmyRepository;
+import ArmyBuilder.repository.UnitRepository;
+import ArmyBuilder.repository.UserRepository;
 
 @Controller
 public class WebController {
   
 	@Autowired //communicates with the repository
-	ContactRepository repo;
+	UserRepository repo;
+	@Autowired
+	UnitRepository unitRepo;
+	@Autowired
+	ArmyRepository armyRepo;
 	
 	@PostMapping("/newUser") //starts the process of making a new user!
 	public String createUser(Model model) {
@@ -53,59 +59,43 @@ public class WebController {
 		return "loginPage";
 	}
 	
-	//Goes to a list of the units, or goes to Add New units if list is empty.
-	//We need a object to select to make a viewUnits page or it will have errors.	
-	/*@GetMapping({"/viewUnits"})
-	public String viewUnits(Model model) {
-		if(repo.findAll().isEmpty()) {
+	@GetMapping({"/viewUnits"})
+	public String viewSavedUnits(Model model) {
+		if(unitRepo.findAll().isEmpty()) {
 			return addNewUnits(model);
 		}
-		model.addAttribute("newUnits", repo.findAll());
-		return "viewUnits";
-	}*/
-	
-	//Adds new units to the page
-	@GetMapping("/addUnit")
+		model.addAttribute("units", unitRepo.findAll());
+		return "results";
+	}
+	@GetMapping("/inputUnits")
 	private String addNewUnits(Model model) {
-		Unit u = new Unit();
-		model.addAttribute("newUnits",u);
-		return "addUnit";
+		Unit un = new Unit();
+		model.addAttribute("newUnit",un);
+		return "input";
 	}
-	
-	//This returns error "Type mismatch: cannot convert from User to Army" it's needed to perform CRUD
-		//If you look at these methods, you can see why we need a 'list of units' to carry in the 'list of armies'.
-	/*
-	 * 
-	 //This would be to save the selected Units to the list of Armies
 	@PostMapping("/inputUnits")
-	public String addNewContact(@ModelAttribute Unit u, Model model) {
-		repo.save(u);
-		return viewUnits(model);
+	public String addNewContact(@ModelAttribute Unit un, Model model) {
+		unitRepo.save(un);
+		return viewSavedUnits(model);
 	}
-	
-	//This would be to edit the selected Units in the list of Armies
 	@GetMapping("edit/{id}")
 	public String showUpdateOrder(@PathVariable("id") long id, Model model) {
-		Unit u = repo.findById(id).orElse(null);
-		model.addAttribute("newUnits", u);
-		return "addUnit";
+		Unit un = unitRepo.findById(id).orElse(null);
+		model.addAttribute("newUnit", un);
+		return "input";
 	}
-	
-	//Saves the edited unit selection to the list of Armies
 	@PostMapping("/update/{id}")
-	public String reviseOrder(Unit u, Model model) {
-		repo.save(u);
-		return viewUnits(model);
+	public String reviseOrder(Unit un, Model model) {
+		unitRepo.save(un);
+		return viewSavedUnits(model);
 	}
-	
-	//Deletes the list of units
 	@GetMapping("/delete/{id}")
 	public String deleteOrder(@PathVariable("id") long id, Model model) {
-		Unit u = repo.findById(id).orElse(null);
-		repo.delete(u);
-		return viewUnits(model);
+		Unit un = unitRepo.findById(id).orElse(null);
+		unitRepo.delete(un);
+		return viewSavedUnits(model);
 	}
-	
-*/
+
+
 
 }

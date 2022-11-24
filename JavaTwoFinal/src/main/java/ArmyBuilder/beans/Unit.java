@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import ArmyBuilder.beans.Troops;
+import lombok.Data;
 
 /**
  * Kenneth Gisler - kgisler@dmacc.edu
@@ -15,21 +16,22 @@ import ArmyBuilder.beans.Troops;
  * Nov 11, 2022
  */
 @Entity
+@Data
 public class Unit {
 	@Id
 	@GeneratedValue
 	private long id;
 	@Autowired
 	private Troops troops;
-	@Autowired
-	private HeavySupport heavySupport;
-	@Autowired
-	private HQ hq;
-	@Autowired
-	private FastAttack fastAttack;
-	@Autowired
-	private DedicatedTransport dt;
-	@Autowired
-	private LordOfWar low;
+	//@Autowired
+	//private HeavySupport heavySupport;
+	//@Autowired
+	//private HQ hq;
+	//@Autowired
+	//private FastAttack fastAttack;
+	//@Autowired
+	//private DedicatedTransport dt;
+	//@Autowired
+	//private LordOfWar low;
 	
 }

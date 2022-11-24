@@ -13,12 +13,15 @@ import javax.persistence.OneToOne;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import lombok.Data;
+
 /**
  * Kenneth Gisler - kgisler@dmacc.edu
  * CIS171 22149
  * Nov 11, 2022
  */
 @Entity
+@Data
 public class Army {
 	@Id
 	@GeneratedValue

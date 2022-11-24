@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import ArmyBuilder.beans.User;
 
 @Repository
-public interface ContactRepository extends JpaRepository<User, Long> {
+public interface UserRepository extends JpaRepository<User, Long> {
 
 }

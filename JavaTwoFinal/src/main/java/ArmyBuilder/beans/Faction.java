@@ -6,12 +6,15 @@ import javax.persistence.Embeddable;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import lombok.Data;
+
 /**
  * Kenneth Gisler - kgisler@dmacc.edu
  * CIS171 22149
  * Nov 11, 2022
  */
 @Embeddable
+@Data
 public class Faction {
 	
 	private String factionName; //the name of the faction used (Tau, Imperial Guard, Orks... ) 
@@ -28,28 +31,6 @@ public class Faction {
 	}
 	public Faction(String factionName) { //string constructor
 		this.factionName = factionName;
-	}
-	
-	//getters
-	public String getFactionName() {
-		return factionName;
-	}
-	public Unit getRoster() {
-		return roster;
-	}
-	
-	//setters
-	public void setFactionName(String factionName) {
-		this.factionName = factionName;
-	}
-	public void setRoster(Unit roster) {
-		this.roster = roster;
-	}
-	
-	//methods
-	@Override
-	public String toString() {
-		return "Faction [factionName=" + factionName + ", roster=" + roster + "]";
 	}
 	
 }

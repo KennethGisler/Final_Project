@@ -29,21 +29,28 @@ public class User {
 	private String userName; //the users personal user name
 	private String userPassword; //the users password to their account
 	
-	@OneToMany
+	@OneToMany(cascade=CascadeType.ALL)
 	@JoinTable
-	private List<Army> usersArmies; //all of the users armies! (this will be the object displayed on the list of armies)
+	private List<Army> army; //all of the users armies! (this will be the object displayed on the list of armies)
 	
 	//constructors
 	public User() { //default no arg. constructor
 		super();
 	}
-	public User(String userName, String userPassword, List<Army> usersArmies) { //all arg constructor
+	public User(String userName, String userPassword, List<Army> army) {
 		this.userName = userName;
 		this.userPassword = userPassword;
-		this.usersArmies = usersArmies;
+		this.army = army;
 	}
-	public User(String userName, String userPassword) { //string constructor
+	public User(String userName, String userPassword) {
 		this.userName = userName;
 		this.userPassword = userPassword;
+	}
+	public User(int id, String userName, String userPassword, List<Army>army) {
+		super();
+		this.id = id;
+		this.userName = userName;
+		this.userPassword = userPassword;
+		this.army = army;
 	}
 }

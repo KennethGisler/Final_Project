@@ -7,34 +7,59 @@
 
 </head>
 <body>
-<form th:object="${newUnit}" th:action="@{/update/{id}(id=${newUnit.id})}" method='POST'>
+<h2>This is inputUnit.html</h2>
+<form action="inputUnit" method="post">
+<!-- 
+th:field="*{troops.troop1}" 
+th:field="*{troops.troop2}"
+th:field="*{troops.troop3}"
+th:field="*{troops.troop4}"
+th:field="*{troops.troop5}"
+th:field="*{troops.troop6}"
+th:field="*{troops.tCost1}"
+th:field="*{troops.tCost2}"
+th:field="*{troops.tCost3}"
+th:field="*{troops.tCost4}"
+th:field="*{troops.tCost5}"
+th:field="*{troops.tCost6}"
+-->
 
-  <label for="troop1">Troop Input:</label>
-  <input type="text" id="troop1" name="troop1" th:field="*{troops.troop1}"><br><br>
-  <label for="troop2">Troop Input:</label>
-  <input type="text" id="troop2" name="troop2" th:field="*{troops.troop2}" ><br><br>
-   <label for="troop3">Troop Input:</label>
-  <input type="text" id="troop3" name="troop3" th:field="*{troops.troop3}"><br><br>
-   <label for="troop4">Troop Input:</label>
-  <input type="text" id="troop4" name="troop4" th:field="*{troops.troop4}"><br><br>
-   <label for="troop5">Troop Input:</label>
-  <input type="text" id="troop5" name="troop5" th:field="*{troops.troop5}"><br><br>
-   <label for="troop6">Troop Input:</label>
-  <input type="text" id="troop6" name="troop6" th:field="*{troops.troop6}"><br><br>
+<label for="troop1">Troop Input:</label>
+  <input type="text" id="troop1" name="troop1" ><br><br>
+
+<!--<label for="troop2">Troop Input:</label>
+  <input type="text" id="troop2" name="troop2"  ><br><br>
+
+<label for="troop3">Troop Input:</label>
+  <input type="text" id="troop3" name="troop3"><br><br>
+
+<label for="troop4">Troop Input:</label>
+  <input type="text" id="troop4" name="troop4"><br><br>
+
+<label for="troop5">Troop Input:</label>
+  <input type="text" id="troop5" name="troop5"><br><br>
+
+<label for="troop6">Troop Input:</label>
+  <input type="text" id="troop6" name="troop6" ><br><br>-->
 
   
     <label for="tcost1">Troop Input:</label>
-  <input type="text" id="tcost1" name="tcost1" th:field="*{troops.tCost1}"><br><br>
-  <label for="tcost2">Troop Input:</label>
-  <input type="text" id="tcost2" name="tcost2" th:field="*{troops.tCost2}"><br><br>
+  <input type="text" id="tcost1" name="tcost1" ><br><br>
+  
+<!--   <label for="tcost2">Troop Input:</label>
+  <input type="text" id="tcost2" name="tcost2"><br><br>
+  
    <label for="tcost3">Troop Input:</label>
-  <input type="text" id="tcost3" name="tcost" th:field="*{troops.tCost3}"><br><br>
+  <input type="text" id="tcost3" name="tcost3"><br><br>
+  
    <label for="tcost4">Troop Input:</label>
-  <input type="text" id="tcost4" name="tcost" th:field="*{troops.tCost4}"><br><br>
+  <input type="text" id="tcost4" name="tcost4"><br><br>
+  
    <label for="tcost5">Troop Input:</label>
-  <input type="text" id="tcost" name="tcost5" th:field="*{troops.tCost5}"><br><br>
+  <input type="text" id="tcost5" name="tcost5"><br><br>
+  
    <label for="tcost6">Troop Input:</label>
-  <input type="text" id="tcost6" name="tcost6" th:field="*{troops.tCost6}"><br><br>
+  <input type="text" id="tcost6" name="tcost6"><br><br> -->
 
 
 <input name="submit" type="submit" value="submit"/>

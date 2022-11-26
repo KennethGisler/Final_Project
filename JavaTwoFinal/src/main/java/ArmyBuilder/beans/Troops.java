@@ -9,18 +9,30 @@ import lombok.Data;
  * CIS171 22149
  * Nov 11, 2022
  */
-@Embeddable
+
 @Data
-public class Troops  {
-	String troop1,troop2,troop3,troop4,troop5,troop6;
-	int tCost1 ,tCost2, tCost3, tCost4, tCost5 ,tCost6;
+@Embeddable
+public class Troops{
+	String troop1;
+	/*String troop2;
+	String troop3;
+	String troop4;
+	String troop5;
+	String troop6;*/
+	String tcost1;
+	/*String tcost2;
+	String tcost3;
+	String tcost4;
+	String tcost5;
+	String tcost6;*/
 	
 	//constructors
 	public Troops() {
 		super();
 	}
-	public Troops(String troop1, String troop2, String troop3, String troop4, String troop5, String troop6, int cost1,
-			int cost2, int cost3, int cost4, int cost5, int cost6) {
+	
+	/*public Troops(String troop1, String troop2, String troop3, String troop4, String troop5, String troop6, String tcost1,
+			String tcost2, String tcost3, String tcost4, String tcost5, String tcost6) {
 		super();
 		this.troop1 = troop1;
 		this.troop2 = troop2;
@@ -28,17 +40,18 @@ public class Troops  {
 		this.troop4 = troop4;
 		this.troop5 = troop5;
 		this.troop6 = troop6;
-		this.tCost1 = cost1;
-		this.tCost2 = cost2;
-		this.tCost3 = cost3;
-		this.tCost4 = cost4;
-		this.tCost5 = cost5;
-		this.tCost6 = cost6;
-	}
-	public Troops(String troop1, int cost1) {
+		this.tcost1 = tcost1;
+		this.tcost2 = tcost2;
+		this.tcost3 = tcost3;
+		this.tcost4 = tcost4;
+		this.tcost5 = tcost5;
+		this.tcost6 = tcost6;
+	}*/
+	
+	public Troops(String troop1, String tcost1) {
 		super();
 		this.troop1 = troop1;
-		this.tCost1 = cost1;
+		this.tcost1 = tcost1;
 	}
 	
 }

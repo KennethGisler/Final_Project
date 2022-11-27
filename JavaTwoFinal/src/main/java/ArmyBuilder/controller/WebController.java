@@ -27,6 +27,13 @@ public class WebController {
 	@Autowired
 	ArmyRepository armyRepo;
 	
+	@GetMapping("/viewAll")
+	public String viewAllInfo(Model model) {
+		model.addAttribute("users", repo.findAll());
+		model.addAttribute("units", unitRepo.findAll());
+		model.addAttribute("armies", armyRepo.findAll());
+		return "viewAll";
+	}
 	@PostMapping("/newUser") //starts the process of making a new user!
 	public String createUser(Model model) {
 		User u = new User();

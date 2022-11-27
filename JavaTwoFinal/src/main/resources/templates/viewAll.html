@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<table>
+<tr>
+<th>Name of User</th>
+<th>Password of User</th>
+</tr>
+<tr th:each="currentUser : ${users}">
+ <td style="display:none;" th:text= "${currentUser.id}" type="hidden"/>
+ <td th:text= "${currentUser.userName}" />
+<td th:text= "${currentUser.userPassword}" />
+</table>
+
+<table>
+<tr>
+<th>Name of Army</th>
+<th>Faction of Army</th>
+<th>Cost of Army</th>
+</tr>
+<tr th:each="currentArmy : ${armies}">
+<td th:text="${currentArmy}"/>
+<td th:text="${currentArmy.armyName}"/>
+<td th:text="${currentArmy.factionName}"/>
+<td th:text="${currentArmy.pointsTotal}"/>
+</table>
+<table>
+<tr>
+<th>Name of Unit</th>
+<th>Cost of Units</th>
+</tr>
+<tr th:each="currentUnits : ${units}">
+<td th:text="${currentUnits.troops.troop1}"/>
+<td th:text="${currentUnits.troops.tCost1}"/>
+
+
+</table>
+
+</body>
+</html>

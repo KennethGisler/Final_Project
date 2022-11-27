@@ -23,15 +23,17 @@ public class Unit {
 	private long id;
 	@Autowired
 	private Troops troops;
-	//@Autowired
-	//private HeavySupport heavySupport;
-	//@Autowired
-	//private HQ hq;
-	//@Autowired
-	//private FastAttack fastAttack;
-	//@Autowired
-	//private DedicatedTransport dt;
-	//@Autowired
-	//private LordOfWar low;
+	@Autowired
+	private HeavySupport hs;
+	@Autowired
+	private HQ hq;
+	@Autowired
+	private FastAttack fa;
+	@Autowired
+	private DedicatedTransport dt;
+	@Autowired
+	private LordOfWar low;
+	@Autowired
+	private Elites e;
 	
 }

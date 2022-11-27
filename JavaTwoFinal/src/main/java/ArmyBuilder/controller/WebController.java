@@ -18,7 +18,7 @@ public class WebController {
 ArmyRepository repo;
 
 	
-	
+/*We add the 'unit' objects  to the Army object, the Army object is then saved with all of the units. You'll want a user table joined to the army table.*/
 	@GetMapping({"/viewArmy"})
 	public String viewArmy(Model model) {
 		if(repo.findAll().isEmpty()) {

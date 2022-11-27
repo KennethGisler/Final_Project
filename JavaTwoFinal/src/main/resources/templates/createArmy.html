@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Let's make a new army!</title>
+</head>
+<body>
+<h1>Enter your Army's Name, and total points!</h1>
+<form th:object="${newArmy}" th:action="newArmy" method="get" >
+		Army Name: <input name="armyName" type="text"> </br>
+		Total Points: <input name="pointsTotal" type="text"> </br>
+		<input name="submit" type ="submit" value="submit" />
+	</form>
+</body>
+</html>

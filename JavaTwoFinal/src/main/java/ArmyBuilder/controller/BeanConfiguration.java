@@ -78,8 +78,4 @@ public class BeanConfiguration {
 			return bean;
 		}
 		
-		/*@Bean List<Army> armyList(){ //temporoary [might delete] 
-			List<Army> bean = new ArrayList<Army>();
-			return bean;
-		}*/
 }

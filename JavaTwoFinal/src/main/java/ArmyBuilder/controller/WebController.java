@@ -1,5 +1,7 @@
 package ArmyBuilder.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,6 +30,8 @@ public class WebController {
 	@PostMapping("/newUser") //starts the process of making a new user!
 	public String createUser(Model model) {
 		User u = new User();
+		u.setUserName("test");
+		u.setUserPassword("test");
 		model.addAttribute("newUser",u);
 		return "createUser";
 	}
@@ -37,6 +41,38 @@ public class WebController {
 		repo.save(u);
 		return "navPage";
 	}
+	
+	@PostMapping("/newArmy") //starts the process of making a new army! 
+	public String createArmy(Model model) {
+		Army a = new Army();
+		model.addAttribute("newArmy",a);
+		return("createArmy");
+	}
+	
+	@GetMapping("/newArmy") //adds an army!
+	public String createArmy(@ModelAttribute Army a, Model model) {
+		List<User> u = repo.findAll();
+		User test = u.get(0);
+		test.getUsersArmies().add(a);
+		armyRepo.save(a);
+		repo.save(test);
+		return "navPage";
+	}
+	
+	@PostMapping("/viewUsers") //shows you all the users.
+	public String viewUsers(Model model) {
+		if(repo.findAll().isEmpty()) {
+			return createUser(model);
+		}else {
+			for(User u : repo.findAll()) {
+				System.out.println(u.toString());
+			}
+			model.addAttribute("users", repo.findAll());
+			return "result";
+		}
+	}
+	
+	
 	
 	@PostMapping("/login") //this is called to login from the login page!
 	public String login(Model model) {
@@ -95,7 +131,11 @@ public class WebController {
 		unitRepo.delete(un);
 		return viewSavedUnits(model);
 	}
-
+	
+	@PostMapping("/navPage")
+	public String toNavPage(Model model) {
+		return "navPage";
+	}
 
 
 }

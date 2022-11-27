@@ -7,16 +7,24 @@ table, th, td {
 </style>
 <head>
 <meta charset="ISO-8859-1">
-<title>View Past Orders</title>
+<title>View Users</title>
 </head>
 <body>
 <form>
-<table>
 
+<table>
+<tr th:each="currentUser : ${users}">
+	<!--  <td th:text= "{currentUser.userName}" />
+	<td th:text= "{currentUser.userPassword}" />  -->
 </table>
+
+
 
 </form>
 
-<a href = "../inputOrder">Add New Order</a>
+<form action="navPage" method= post >
+	<input type="submit" name="submit" value="To Nav Page!" />
+</form>
 </body>
+
 </html>

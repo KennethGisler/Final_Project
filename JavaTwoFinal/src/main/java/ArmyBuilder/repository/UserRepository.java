@@ -6,16 +6,19 @@
 package ArmyBuilder.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 
-import ArmyBuilder.beans.Army;
+import ArmyBuilder.beans.Users;
 
 /**
  * @author 15152
  *
  */
 @Repository
-public interface ArmyRepository extends JpaRepository <Army,Long> {
+public interface UserRepository extends JpaRepository <Users,Long>, JpaSpecificationExecutor<Users>{
+	
+	
 	
 
 }

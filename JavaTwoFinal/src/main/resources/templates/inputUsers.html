@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Create a User!</title>
+</head>
+<body>
+<form th:object="${newUsers}" th:action="@{/updateuser/{id}(id=${newUsers.id})}" method='POST'>
+User Name:<input name="username" size="20" th:field="*{username}"><br/>
+Password:<input name="password" size="20" th:field ="*{password}">
+	
+	
+	<input name="submit" type="submit" value="submit"/>
+
+</form>
+
+</body>
+</html>

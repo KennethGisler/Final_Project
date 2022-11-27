@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Viewing Users</title>
+</head>
+<body>
+<form>
+<table>
+<tr>
+<th>Username</th>
+<th>Password</th>
+</tr>
+<tr th:each="currentUsers : ${users}">
+<td th:text="${currentUsers.id}"/>
+<td th:text="${currentUsers.username}"/>
+<td th:text="${currentUsers.password}"/>
+</tr>
+
+
+</table>
+</form>
+
+
+</body>
+</html>

@@ -9,14 +9,55 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import ArmyBuilder.beans.Army;
+import ArmyBuilder.beans.Users;
 import ArmyBuilder.repository.ArmyRepository;
+import ArmyBuilder.repository.UserRepository;
 
 
 @Controller
 public class WebController {
 @Autowired
 ArmyRepository repo;
+@Autowired
+UserRepository userRepo;
 
+@GetMapping({"/viewUsers"})
+public String viewUsers(Model model) {
+	if(userRepo.findAll().isEmpty()) {
+		return addNewUsers(model);
+	}
+	model.addAttribute("users", userRepo.findAll());
+	return "resultsUsers"; //normal check is "resultsUsers"
+}
+@GetMapping("/inputUsers")
+private String addNewUsers(Model model) {
+	Users us = new Users();
+	model.addAttribute("newUsers",us);
+	return "inputUsers";
+}
+@PostMapping("/inputUsers")
+public String addNewUser(@ModelAttribute Users us, Model model) {
+	userRepo.save(us);
+	return viewUsers(model);
+}
+
+@GetMapping("edituser/{id}")
+public String showUpdateUsers(@PathVariable("id") long id, Model model) {
+	Users us = userRepo.findById(id).orElse(null);
+	model.addAttribute("newUsers", us);
+	return "inputUsers";
+}
+@PostMapping("/updateuser/{id}")
+public String reviseUsers(Users us, Model model) {
+	userRepo.save(us);
+	return viewUsers(model);
+}
+@GetMapping("/deleteuser/{id}")
+public String deleteUsers(@PathVariable("id") long id, Model model) {
+	Users us = userRepo.findById(id).orElse(null);
+	userRepo.delete(us);
+	return viewArmy(model);
+}
 	
 /*We add the 'unit' objects  to the Army object, the Army object is then saved with all of the units. You'll want a user table joined to the army table.*/
 	@GetMapping({"/viewArmy"})
@@ -34,23 +75,23 @@ ArmyRepository repo;
 		return "input";
 	}
 	@PostMapping("/inputArmy")
-	public String addNewContact(@ModelAttribute Army ar, Model model) {
+	public String addNewArmy(@ModelAttribute Army ar, Model model) {
 		repo.save(ar);
 		return viewArmy(model);
 	}
 	@GetMapping("edit/{id}")
-	public String showUpdateOrder(@PathVariable("id") long id, Model model) {
+	public String showUpdateArmy(@PathVariable("id") long id, Model model) {
 		Army ar = repo.findById(id).orElse(null);
 		model.addAttribute("newArmy", ar);
 		return "input";
 	}
 	@PostMapping("/update/{id}")
-	public String reviseOrder(Army ar, Model model) {
+	public String reviseArmy(Army ar, Model model) {
 		repo.save(ar);
 		return viewArmy(model);
 	}
 	@GetMapping("/delete/{id}")
-	public String deleteOrder(@PathVariable("id") long id, Model model) {
+	public String deleteArmy(@PathVariable("id") long id, Model model) {
 		Army ar = repo.findById(id).orElse(null);
 		repo.delete(ar);
 		return viewArmy(model);

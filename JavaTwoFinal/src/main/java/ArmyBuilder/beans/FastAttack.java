@@ -1,3 +1,8 @@
+/**
+ * @author Alexander Kelly - akelly3
+ * CIS175 - Fall 2022
+ * Nov 27, 2022
+ */
 package ArmyBuilder.beans;
 
 import javax.persistence.Embeddable;
@@ -5,29 +10,27 @@ import javax.persistence.Embeddable;
 import lombok.Data;
 
 /**
- * Kenneth Gisler - kgisler@dmacc.edu
- * CIS171 22149
- * Nov 11, 2022
+ * @author 15152
+ *
  */
-@Embeddable
 @Data
-public class FastAttack{
-	private String fa1, fa2,fa3;
-	int faCost1, faCost2, faCost3;
-	
-	//constructors
+@Embeddable
+public class FastAttack {
+	private String fa1;
+	private String facost;
+
+
 	public FastAttack() {
 		super();
+		this.fa1 = "";
+		this.facost = "";
 	}
-	public FastAttack(String fa1, String fa2, String fa3, int cost1, int cost2, int cost3) {
+
+	public FastAttack(String fa1, String facost) {
 		super();
 		this.fa1 = fa1;
-		this.fa2 = fa2;
-		this.fa3 = fa3;
-		this.faCost1 = cost1;
-		this.faCost2 = cost2;
-		this.faCost3 = cost3;
+		this.facost = facost;
+		
 	}
-	
-	
+
 }

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert your Army</title>
+
+
+
+</head>
+<body>
+<form th:object="${newArmy}" th:action="@{/update/{id}(id=${newArmy.id})}" method='POST'>
+Army Name:<input name="name" size="20" th:field="*{name}"><br/>
+<!-- Faction Name -->
+Select Faction:<select name="faction" th:field="*{faction}">
+	<option value="tau">Tau</option>
+	<option value="ork">Ork</option>
+	<option value="ast">Ast</option>
+	</select><br/><br/>
+	
+<!-- Troops -->
+Select Troop1:<select name="troop1" th:field="*{troops.troop1}">
+	<option value="alex">Temp Troop Alex</option>
+	<option value="ken">Temp Troop Ken</option>
+	<option value="almass">Temp Troop Almass</option>
+	<option value="random">Temp Troop Random</option>
+	</select><br/><br/>
+Select Troop Cost 1:<select name="tcost1" th:field="*{troops.tcost}">
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	</select><br/><br/>
+	
+<!-- Elites -->
+Select Elite 1:<select name="elite1" th:field="*{elites.elite1}">
+	<option value="alex">Temp Troop Alex</option>
+	<option value="ken">Temp Troop Ken</option>
+	<option value="almass">Temp Troop Almass</option>
+	<option value="random">Temp Troop Random</option>
+	</select><br/><br/>
+Select Elite Cost 1:<select name="ecost" th:field="*{elites.ecost}">
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	</select><br/><br/>
+	
+<!-- Lord of War -->
+Select Lord of War 1:<select name="low1" th:field="*{lordofwar.low1}">
+	<option value="alex">Temp Troop Alex</option>
+	<option value="ken">Temp Troop Ken</option>
+	<option value="almass">Temp Troop Almass</option>
+	<option value="random">Temp Troop Random</option>
+	</select><br/><br/>
+Select Lord of War Cost 1:<select name="lcost" th:field="*{lordofwar.lcost}">
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	</select><br/><br/>
+
+<!-- Heavy Support -->
+Select Heavy Support 1:<select name="heavy1" th:field="*{heavysupport.heavy1}">
+	<option value="alex">Temp Troop Alex</option>
+	<option value="ken">Temp Troop Ken</option>
+	<option value="almass">Temp Troop Almass</option>
+	<option value="random">Temp Troop Random</option>
+	</select><br/><br/>
+Select Heavy Support Cost 1:<select name="hvcost" th:field="*{heavysupport.hvcost}">
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	</select><br/><br/>
+
+<!-- HQ-->
+Select HQ 1:<select name="hq1" th:field="*{hq.hq1}">
+	<option value="alex">Temp Troop Alex</option>
+	<option value="ken">Temp Troop Ken</option>
+	<option value="almass">Temp Troop Almass</option>
+	<option value="random">Temp Troop Random</option>
+	</select><br/><br/>
+Select HQ Cost 1:<select name="hqcost" th:field="*{hq.hqcost}">
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	</select><br/><br/>
+
+<!-- Fast Attack -->
+Select Fast Attack 1:<select name="fa1" th:field="*{fastattack.fa1}">
+	<option value="alex">Temp Troop Alex</option>
+	<option value="ken">Temp Troop Ken</option>
+	<option value="almass">Temp Troop Almass</option>
+	<option value="random">Temp Troop Random</option>
+	</select><br/><br/>
+Select Fast Attack Cost 1:<select name="hqcost" th:field="*{fastattack.facost}">
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	</select><br/><br/>
+
+<!-- Transport -->
+Select Fast Attack 1:<select name="trans1" th:field="*{transport.trans1}">
+	<option value="alex">Temp Troop Alex</option>
+	<option value="ken">Temp Troop Ken</option>
+	<option value="almass">Temp Troop Almass</option>
+	<option value="random">Temp Troop Random</option>
+	</select><br/><br/>
+Select Fast Attack Cost 1:<select name="transcost" th:field="*{transport.transcost}">
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	</select><br/><br/>
+
+
+
+
+<input name="submit" type="submit" value="submit"/>
+
+</form>
+<a href = "viewArmy">View Armies</a>
+</body>
+
+</html>

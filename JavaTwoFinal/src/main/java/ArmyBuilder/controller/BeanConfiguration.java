@@ -7,79 +7,63 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import ArmyBuilder.beans.Army;
-import ArmyBuilder.beans.DedicatedTransport;
+import ArmyBuilder.beans.Elites;
 import ArmyBuilder.beans.FastAttack;
 import ArmyBuilder.beans.HQ;
 import ArmyBuilder.beans.HeavySupport;
 import ArmyBuilder.beans.LordOfWar;
+import ArmyBuilder.beans.Transport;
 import ArmyBuilder.beans.Troops;
-import ArmyBuilder.beans.Unit;
-import ArmyBuilder.beans.User;
 
-/**
- * Kenneth Gisler - kgisler@dmacc.edu
- * CIS171 22149
- * Nov 12, 2022
- */
+
+
 @Configuration
 public class BeanConfiguration {
 
-		@Bean
-		public User user() {	//user bean
-			User bean = new User();
-			return bean;
-		}
-		
-		@Bean
-		public Army army() { 	//army bean
-			Army bean = new Army();
-			return bean;
-		}
-		
-		@Bean 
-		public Unit unit() {	//unit bean
-			Unit bean = new Unit(); 
-			return bean;
-		}
-		
-		@Bean 
-		public HQ hq() {	//hq bean
-			HQ bean = new HQ();
-			return bean;
-		}
-		
-		@Bean
-		public Troops troops() {	//troops bean	
-			Troops bean = new Troops();
-			return bean;
-		}
-		
-		@Bean
-		public HeavySupport heavySupport() {	//heavy support bean
-			HeavySupport bean = new HeavySupport();
-			return bean;
-		}
-		
-		@Bean
-		public FastAttack fastAttack() {	//fast attack bean
-			FastAttack bean = new FastAttack();
-			return bean;
-		}
-		
-		@Bean
-		public DedicatedTransport dedicatedTransport() { //dedicated transport bean
-			DedicatedTransport bean = new DedicatedTransport();
-			return bean;
-		}
-		
-		@Bean
-		public LordOfWar lordOfWAr() {	//lord of war bean
-			LordOfWar bean = new LordOfWar();
-			return bean;
-		}
-		
-		/*@Bean List<Army> armyList(){ //temporoary [might delete] 
-			List<Army> bean = new ArrayList<Army>();
-			return bean;
-		}*/
+	@Bean
+	public Army army() {
+		Army bean = new Army("ArmyName", "FactionName");
+		return bean;
+	}
+	
+	@Bean
+	public Troops troops() {
+		Troops bean = new Troops("troopName","troopCost");
+		return bean;
+	}
+	
+	@Bean
+	public Elites elites() {
+		Elites bean = new Elites("troopName","troopCost");
+		return bean;
+	}
+	@Bean 
+	public HQ hq() {
+		HQ bean = new HQ();
+		return bean;
+	}
+	
+	@Bean
+	public HeavySupport heavysupport() {	//heavy support bean
+		HeavySupport bean = new HeavySupport();
+		return bean;
+	}
+	
+	@Bean
+	public FastAttack fastattack() {	//fast attack bean
+		FastAttack bean = new FastAttack();
+		return bean;
+	}
+	
+	@Bean
+	public Transport dedicatedtransport() { //dedicated transport bean
+		Transport bean = new Transport();
+		return bean;
+	}
+	
+	@Bean
+	public LordOfWar lordOfWAr() {	//lord of war bean
+		LordOfWar bean = new LordOfWar();
+		return bean;
+	}
 }

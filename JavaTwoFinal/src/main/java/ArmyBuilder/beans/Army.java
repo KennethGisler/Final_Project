@@ -1,49 +1,67 @@
+/**
+ * @author Alexander Kelly - akelly3
+ * CIS175 - Fall 2022
+ * Nov 27, 2022
+ */
 package ArmyBuilder.beans;
 
-import java.util.List;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
-import javax.persistence.OneToMany;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import lombok.Data;
 
 /**
- * Kenneth Gisler - kgisler@dmacc.edu
- * CIS171 22149
- * Nov 11, 2022
+ * @author 15152
+ * THIS IS THE MAIN CLASS THAT HOLDS THE LIST OF UNITS.
+ * WE CAN ADD MORE UNITS TO THE 'troops' BY ADDING MORE VARIABLES IN THE TROOPS CLASS.
+ * SCALE OUTWARDS.
  */
-
 @Data
 @Entity
-@Embeddable
 public class Army {
 	@Id
 	@GeneratedValue
-	long id;
-	private String  armyName; //this would be the name of the army that is built (like "Grom's Skull Crushers, or "The 178th Cadian Armord")
-	private String factionName;
-	
-	@OneToMany(cascade=CascadeType.ALL)
-	@JoinTable
-	private List<Unit> unit;
-	
-	public Army() {
-		super();
-	}
-	public Army(String armyName, String factionName, List<Unit> unit) {
-		this.armyName = armyName;
-		this.unit = unit;
-		this.factionName = factionName;
-	}
-	public Army(int id, String armyName, String factionName, List<Unit> unit) {
-		this.id = id;
-		this.armyName = armyName;
-		this.unit = unit;
-		this.factionName = factionName;
-	}
+private long id;
+	private String name;
+	private String faction;
+@Autowired
+private Troops troops;
+@Autowired
+private Elites elites;
+@Autowired
+private FastAttack fastattack;
+@Autowired
+private HeavySupport heavysupport;
+@Autowired
+private HQ hq;
+@Autowired
+private LordOfWar lordofwar;
+@Autowired
+private Transport transport;
+
+public Army() {
+	super();
+	this.name ="";
+	this.faction="";
+}
+public Army(String name) {
+	super();
+	this.name = name;
+}
+public Army(String name, String faction) {
+	super();
+	this.name = name;
+	this.faction = faction;
+
+}
+public Army(int id, String name, String faction) {
+	super();
+	this.id =id;
+	this.name=name;
+	this.faction=faction;
+}
+
 
 }

@@ -15,21 +15,21 @@ import lombok.Data;
  */
 @Data
 @Embeddable
-public class Elites {
-private String elite1;
-private String ecost;
+public class Transport {
 
-public Elites() {
+private String trans1;
+private String transcost;
+
+public Transport(){
 	super();
-	this.elite1 = "";
-	this.ecost ="";
+	this.trans1 ="";
+	this.transcost = "";
+}
+
+public Transport(String trans1, String transcost) {
+	super();
+	this.trans1 = trans1;
+	this.transcost = transcost;
 	
 }
-
-public Elites(String elite1, String ecost) {
-	super();
-	this.elite1 = elite1;
-	this.ecost = ecost;
-}
-
 }

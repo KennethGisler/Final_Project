@@ -7,20 +7,72 @@ table, th, td {
 </style>
 <head>
 <meta charset="ISO-8859-1">
-<title>WE DID IT ALL WOO</title>
+<title>View Past Orders</title>
 </head>
 <body>
-<h2>This is results.html</h2>
 <form>
 <table>
-<h1>GOOD JOB</h1>
-<h2>Put a Table that shows it all</h2>
+<tr>
+<th>ID</th>
+<th>Army Name</th>
+<th>Faction</th>
 
+<!-- Troops -->
+<th>Troop1</th>
+<th>TroopCost1</th>
 
+<!-- Elites -->
+<th>Elite1</th>
+<th>EliteCost1</th>
+<!-- Lord of War -->
+<th>Lord of War1</th>
+<th>Lord of War Cost1</th>
+<!-- Heavy Support -->
+<th>Heavy Support 1</th>
+<th>Heavy Support Cost 1</th>
+<!-- HQ -->
+<th>HQ 1</th>
+<th>HQ Cost 1</th>
+<!-- Fast Attack -->
+<th>Fast Attack 1</th>
+<th>Fast Attack Cost 1</th>
+<!-- Transport -->
+<th>Transport 1</th>
+<th>Transport Cost 1</th>
+</tr>
+<tr th:each="currentArmy : ${army}">
+<td th:text="${currentArmy.id}"/>
+<td th:text="${currentArmy.name}"/>
+<td th:text="${currentArmy.faction}"/>
+<!-- Troops -->
+<td th:text="${currentArmy.troops.troop1}"/>
+<td th:text="${currentArmy.troops.tcost}"/>
+<!-- Elites -->
+<td th:text="${currentArmy.elites.elite1}"/>
+<td th:text="${currentArmy.elites.ecost}"/>
+<!-- Lord of War -->
+<td th:text="${currentArmy.lordofwar.low1}"/>
+<td th:text="${currentArmy.lordofwar.lcost}"/>
+<!-- Heavy Support -->
+<td th:text="${currentArmy.heavysupport.heavy1}"/>
+<td th:text="${currentArmy.heavysupport.hvcost}"/>
+<!-- HQ Support -->
+<td th:text="${currentArmy.hq.hq1}"/>
+<td th:text="${currentArmy.hq.hqcost}"/>
+<!-- Fact Attack -->
+<td th:text="${currentArmy.fastattack.fa1}"/>
+<td th:text="${currentArmy.fastattack.facost}"/>
+<!-- Transport -->
+<td th:text="${currentArmy.transport.trans1}"/>
+<td th:text="${currentArmy.transport.transcost}"/>
+
+<!-- Edit/Delete -->
+<td><a th:href="@{/edit/{id}(id=${currentArmy.id})}">Edit</a></td>
+<td><a th:href="@{/delete/{id}(id=${currentArmy.id})}">Delete</a></td>
 </table>
 
 </form>
 
-<a href = "index.html">Add New User</a>
+<a href = "../inputArmy">Input New Army</a>
 </body>
 </html>

@@ -1,3 +1,8 @@
+/**
+ * @author Alexander Kelly - akelly3
+ * CIS175 - Fall 2022
+ * Nov 27, 2022
+ */
 package ArmyBuilder.beans;
 
 import javax.persistence.Embeddable;
@@ -5,28 +10,27 @@ import javax.persistence.Embeddable;
 import lombok.Data;
 
 /**
- * Kenneth Gisler - kgisler@dmacc.edu
- * CIS171 22149
- * Nov 11, 2022
+ * @author 15152
+ *
  */
-@Embeddable
 @Data
+@Embeddable
 public class HQ {
-	private String hq1,hq2,hq3;
-	private int hqCost1, hqCost2, hqCost3;
-	
-	//constructor
+	private String hq1;
+	private String hqcost;
+
+
 	public HQ() {
 		super();
+		this.hq1 = "";
+		this.hqcost = "";
 	}
-	public HQ(String hq1, String hq2, String hq3, int cost1, int cost2, int cost3) {
+
+	public HQ(String hq1, String hqcost) {
 		super();
 		this.hq1 = hq1;
-		this.hq2 = hq2;
-		this.hq3 = hq3;
-		this.hqCost1 = cost1;
-		this.hqCost2 = cost2;
-		this.hqCost3 = cost3;
+		this.hqcost = hqcost;
+		
 	}
-	
+
 }

@@ -1,5 +1,7 @@
 package ArmyBuilder.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,29 +23,34 @@ ArmyRepository repo;
 @Autowired
 UserRepository userRepo;
 
+
 @GetMapping({"/viewUsers"})
 public String viewUsers(Model model) {
 	if(userRepo.findAll().isEmpty()) {
 		return addNewUsers(model);
 	}
 	model.addAttribute("users", userRepo.findAll());
-	return "resultsUsers"; //normal check is "resultsUsers"
+	return "resultsUsers";
 }
+
 @GetMapping("/inputUsers")
 private String addNewUsers(Model model) {
 	Users us = new Users();
+	Army ar = new Army();
 	model.addAttribute("newUsers",us);
 	return "inputUsers";
 }
 @PostMapping("/inputUsers")
-public String addNewUser(@ModelAttribute Users us, Model model) {
+public String addNewUser(@ModelAttribute Users us, Army ar, Model model) {
 	userRepo.save(us);
+	repo.save(ar);
 	return viewUsers(model);
 }
 
 @GetMapping("edituser/{id}")
 public String showUpdateUsers(@PathVariable("id") long id, Model model) {
 	Users us = userRepo.findById(id).orElse(null);
+	Army ar = repo.findById(id).orElse(null);
 	model.addAttribute("newUsers", us);
 	return "inputUsers";
 }
@@ -76,7 +83,11 @@ public String deleteUsers(@PathVariable("id") long id, Model model) {
 	}
 	@PostMapping("/inputArmy")
 	public String addNewArmy(@ModelAttribute Army ar, Model model) {
+		List<Users> us = userRepo.findAll();
+		Users test = us.get(0);
+		test.getArmy().add(ar);
 		repo.save(ar);
+		userRepo.save(test);
 		return viewArmy(model);
 	}
 	@GetMapping("edit/{id}")

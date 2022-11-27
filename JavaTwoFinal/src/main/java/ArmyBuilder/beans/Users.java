@@ -11,6 +11,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
 
 import lombok.Data;
@@ -30,5 +31,6 @@ private long id;
 	private String password;
 	
 	@OneToMany(cascade = CascadeType.ALL)
+	@JoinTable
 	private List<Army> army;
 }

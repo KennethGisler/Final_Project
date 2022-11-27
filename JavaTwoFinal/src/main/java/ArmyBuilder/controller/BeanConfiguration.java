@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 
 import ArmyBuilder.beans.Army;
 import ArmyBuilder.beans.DedicatedTransport;
+import ArmyBuilder.beans.Elites;
 import ArmyBuilder.beans.FastAttack;
 import ArmyBuilder.beans.HQ;
 import ArmyBuilder.beans.HeavySupport;
@@ -76,6 +77,12 @@ public class BeanConfiguration {
 		public LordOfWar lordOfWAr() {	//lord of war bean
 			LordOfWar bean = new LordOfWar();
 			return bean;
+		}
+		
+		@Bean
+		public Elites elites() {
+			Elites e = new Elites();
+			return e;
 		}
 		
 }

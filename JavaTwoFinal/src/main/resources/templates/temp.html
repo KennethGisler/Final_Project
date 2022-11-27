@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>tester</title>
+</head>
+<body>
+<h1>Enter the Roster info!</h1>
+<form th:object="${newUnit}" th:action="newUnit" method="get" >
+		Troop Name: <input name="troops.troop1" type="text"> </br>
+		Troop Cost: <input name="troops.tCost1" type="test"> </br>
+		<input name="submit" type ="submit" value="submit" />
+	</form>
+</body>
+</html>

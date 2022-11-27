@@ -42,6 +42,23 @@ public class WebController {
 		return "navPage";
 	}
 	
+	@PostMapping("/newUnit")
+	public String createUnit(Model model) {
+		Unit u = new Unit();
+		model.addAttribute("newUnit",u);
+		return("temp");
+	}
+	
+	@GetMapping("/newUnit")
+	public String createUnit(@ModelAttribute Unit u, Model model) {
+		List<Army> a = armyRepo.findAll();
+		Army test = a.get(0);
+		test.getRoster().add(u);
+		unitRepo.save(u);
+		armyRepo.save(test);
+		return"navPage";
+	}
+	
 	@PostMapping("/newArmy") //starts the process of making a new army! 
 	public String createArmy(Model model) {
 		Army a = new Army();

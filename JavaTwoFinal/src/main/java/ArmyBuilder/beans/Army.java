@@ -30,7 +30,7 @@ public class Army {
 	private int pointsTotal; //total cost of the army! 
 	private String factionName;
 	@OneToMany
-	@JoinTable(name = "unit")
+	@JoinTable
 	private List<Unit> roster;
 	
 	

@@ -118,7 +118,7 @@ public class WebController {
 			return addNewUnits(model);
 		}
 		model.addAttribute("units", unitRepo.findAll());
-		return "results";
+		return "result";
 	}
 	@GetMapping("/inputUnits")
 	private String addNewUnits(Model model) {

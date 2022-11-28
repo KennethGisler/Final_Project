@@ -25,74 +25,82 @@ const tauFortification = ["Tidewell Droneport : Cost- 6", "Tidewall Gunrig : Cos
 
 function fillTau(){
     //this selects the <select id = "unitDisplayer">
-    const select = document.getElementById("unitDisplayer");
+    const hq = document.getElementById("hq");
+    const troops = document.getElementById("troops");
+    const elites = document.getElementById("elites");
+    const fastattack = document.getElementById("fastattack");
+    const heavysupport = document.getElementById("heavysupport");
+    const lordofwar = document.getElementById("lordofwar");
+    const transport = document.getElementById("transport");
+    const flyer = document.getElementById("flyer");
+    const fortification = document.getElementById("fortification");
     //Do you like FOR LOOOOOPS?
 
     //reads the array
     for (const [index,a] of tauHQ.entries()){
         const opt = document.createElement('option');
-        opt.id = "theControllerVariableForHQ";
-        opt.value = tauHQ[index];
+        opt.id = "hq";
+        opt.value = [a.slice(0,-9)];
         opt.innerText = tauHQ[index];
-        select.appendChild(opt);
+        hq.appendChild(opt);
 
     }
     for (const [index,a] of tauTroops.entries()){
         const opt = document.createElement('option');
-        opt.id = "theControllerVariableForTroops";
-        opt.value = tauTroops[index];
+        opt.id = "troops";
+        opt.value = [a.slice(0,-9)];
         opt.innerHTML = a;
-        select.appendChild(opt);
+        troops.appendChild(opt);
     }
     for (const [index,a] of tauElites.entries()){
         const opt = document.createElement
         ('option');
-        opt.id = "theControllerVariableForElites";
-        opt.value = tauElites[index];
+        opt.id = "elite";
+        opt.value = [a.slice(0,-9)];
         opt.innerHTML = a;
-        select.appendChild(opt);
+        elites.appendChild(opt);
     }
     for (const [index,a] of tauFastAttack.entries()){
         const opt = document.createElement('option');
-        opt.id = "theControllerVariableForFastAttk";
-        opt.value = tauFastAttack[index];
+        opt.id = "fastattack";
+        opt.value = [a.slice(0,-9)];
         opt.innerHTML = a;
-        select.appendChild(opt);
+        fastattack.appendChild(opt);
     }
     for (const [index,a] of tauHeavySupport.entries()){
         const opt = document.createElement('option');
-        opt.id = "theControllerVariableForHeavy";
-        opt.value = tauHeavySupport[index];
+        opt.id = "heavysupport";
+        opt.value = [a.slice(0,-9)];
         opt.innerHTML = a;
-        select.appendChild(opt);
+        heavysupport.appendChild(opt);
     }
     for (const [index,a] of tauLordOfWar.entries()){
         const opt = document.createElement('option');
-        opt.id = "theControllerVariableforLordOfWar";
-        opt.value = tauLordOfWar[index];
+        opt.id = "lordofwar";
+        opt.value = [a.slice(0,-9)];
         opt.innerHTML = a;
-        select.appendChild(opt);
+        lordofwar.appendChild(opt);
     }
     for (const [index,a] of tauTransport.entries()){
         const opt = document.createElement('option');
-        opt.id = "theControllerVariableForTransport";
-        opt.value = tauTransport[index];
+        opt.id = "transport";
+        opt.value = [a.slice(0,-9)];
         opt.innerHTML = a;
-        select.appendChild(opt);
+        transport.appendChild(opt);
     }
     for (const [index,a] of tauFlyer.entries()){
         const opt = document.createElement('option');
-        opt.id = "theControllerVariableForFlyer";
-        opt.value = tauFlyer[index];
+        opt.id = "flyer";
+        opt.value = [a.slice(0,-9)];
         opt.innerHTML = a;
-        select.appendChild(opt);
+        flyer.appendChild(opt);
     }
     for (const [index,a] of tauFortification.entries()){
         const opt = document.createElement('option');
-        opt.id = "theControllerVariableForFort";
-        opt.value = tauFortification[index];
+        opt.id = "fortification";
+        opt.value = [a.slice(0,-9)];
         opt.innerHTML = a;
-        select.appendChild(opt);
+        fortification.appendChild(opt);
     }
 
 }

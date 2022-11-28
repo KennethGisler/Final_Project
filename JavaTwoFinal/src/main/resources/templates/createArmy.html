@@ -3,23 +3,37 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Let's make a new army!</title>
-</head>
-<body>
-<h1>Enter your Army's Name, and total points!</h1>
-<!-- <form th:object="${newArmy}" th:action="newArmy" method="get" >
-		Army Name: <input name="armyName" type="text"> </br>
-		Army Faction: <input name="factionName" type="test"> </br>
-		Total Points: <input name="pointsTotal" type="text"> </br>
-		<input name="submit" type ="submit" value="submit" />
-</form> -->
 
-<form form th:object="${newArmy}" th:action="newArmy" method="get" >
-		Army Name: <input name="armyName" type="text"> </br>
-		Army Faction: <input name="factionName" type="test"> </br>
-		Total Points: <input name="pointsTotal" type="text"> </br>
-	<!-- This div works! Except it breaks the join :( -->
-	<div th:object="${newUnit}" th:action="newUnit" method="get">
-		Troop Name: <input name="troops.troop1" type="text"> </br>
+  
+    <!--<link rel="stylesheet" type="text/css" href="css/stylesheet.css">!-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@700&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <!--JS For Factions-->
+    <script src = "../js/factionArray.js"></script>
+
+    <meta charset="UTF-8">
+
+    <meta name="description" content="Add a bunch of units">
+
+    <meta name="keywords" content="school, grades, websites, javascript, turtles">
+    <script src = "../js/asmUnitArray.js"></script>
+    <script src = "../js/orksUnitArray.js"></script>
+    <script src = "../js/tauEmpireUnitArray.js"></script>
+    <title>Army Builder Test</title>
+<script>
+	const myUnitList =[];
+	const myUnitCost =[];
+	const myCostTotal=[];
+
+	//This loads the factions up.
+function loadFactions(){
+    for(var x=0; x<factions.length;x++){
+        document.write("<option id="+"factionName"+" name="+"factionName" + " value=" + factionValue[x]+">" + factions[x]+"</options>");
+    }
+}
+
+/*		Troop Name: <input name="troops.troop1" type="text"> </br>
 		Troop Cost: <input name="troops.tCost1" type="test"> </br>
 		Fast Attack Name: <input name="fa.fa1" type="text"> </br>
 		Fast Attack Cost: <input name="fa.faCost1" type="text"> </br>
@@ -33,7 +47,68 @@
 		Elite Cost: <input name="e.eCost1" type="test"> </br>
 		Lord of War Name: <input name="low.low1" type="text"> </br>
 		Lord of War Cost: <input name="low.lowCost1" type="test"> </br>
-		</div>
+		</div> */
+function chooseUnitsToList(){
+
+//checks the faction value
+var factionValue = document.getElementById("factionName").value;
+
+//if a faction is selected
+if(factionValue === "Tau" || factionValue === "Orks" || factionValue === "Astram"){
+//Creates the <select id=unitDisplayer></select>
+
+document.getElementById("unitBox").innerHTML = 
+"</br>Select HQ: <select id ="+"hq "+"name="+"hq.hq1"+"></select></br></br>"+
+"Select troops: <select id ="+"troops "+"name="+"troops.troop1"+"></select></br></br>"+
+"Select elites: <select id ="+"elites "+"name="+"e.elite1"+"></select></br></br>"+
+"Select fastattack: <select id ="+"fastattack "+"name="+"fa.fa1"+"></select></br></br>"+
+"Select heavysupport: <select id ="+"heavysupport "+"name="+"hs.hs1"+"></select></br></br>"+
+"Select lordofwar: <select id ="+"lordofwar "+"name="+"low.low1"+"></select></br></br>"+
+"Select transport: <select id ="+"transport "+"name="+"dt.dt1"+"></select></br></br>"+
+"Select flyer: <select id ="+"flyer "+"name="+"noObject"+"></select></br></br>"+
+"Select fortification: <select id ="+"fortification "+"name="+"noObject"+"></select></br></br>";
+//Also erases error if proper option is selected
+document.getElementById("error").innerHTML = "";
+//Now we populate id unitDisplayer with a new function
+populateFactionUnitList();
+} else {
+//returns error
+document.getElementById("error").innerHTML ="<h1>Pick a Faction</h1>"
+//gets rid of <select>
+document.getElementById("unitBox").innerHTML="";
+}
+
+}
+//This is the one that will check which faction you have and pull up a method to each individual faction unit list.
+function populateFactionUnitList(){
+
+//checks the faction value
+var factionValue = document.getElementById("factionName").value;
+if (factionValue==="Tau"){
+fillTau();
+} if(factionValue==="Astram"){
+fillAsm();
+} if(factionValue==="Orks"){
+fillOrk();
+}
+}
+
+</script>
+</head>
+<body>
+<h1>Enter your Army's Name, and total points!</h1>
+
+<!-- Form for the Army Name/Faction and Points-->
+<form form th:object="${newArmy}" th:action="newArmy" method="get" >
+		Army Name: <input name="armyName" type="text"> </br></br>
+		Factions: <select name="factionName" id="factionName" onchange="chooseUnitsToList()">
+					<script>loadFactions();</script>
+				  </select>
+	<div th:object="${newUnit}" th:action="newUnit" method="get">
+		<!--Unit Box; where the units populate.-->
+		<span id="unitBox"></span>
+		<span id="error"></span>
+	</div> 
 		
 		<input name="submit" type ="submit" value="submit" />
 </form>

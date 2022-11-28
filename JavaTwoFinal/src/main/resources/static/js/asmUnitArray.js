@@ -22,76 +22,84 @@ const asmFortification = [];
 
 
 function fillAsm(){
-    //this selects the <select id = "unitDisplayer">
-    const select = document.getElementById("unitDisplayer");
-    //Do you like FOR LOOOOOPS?
-
-    //reads the array
-    for (const [index,a] of asmHQ.entries()){
-        const opt = document.createElement('option');
-        opt.id = "theControllerVariableForHQ";
-        opt.value = asmHQ[index];
-        opt.innerText = asmHQ[index];
-        select.appendChild(opt);
-
-    }
-    for (const [index,a] of asmTroops.entries()){
-        const opt = document.createElement('option');
-        opt.id = "theControllerVariableForTroops";
-        opt.value = asmTroops[index];
-        opt.innerHTML = a;
-        select.appendChild(opt);
-    }
-    for (const [index,a] of asmElites.entries()){
-        const opt = document.createElement
-        ('option');
-        opt.id = "theControllerVariableForElites";
-        opt.value = asmElites[index];
-        opt.innerHTML = a;
-        select.appendChild(opt);
-    }
-    for (const [index,a] of asmFastAttack.entries()){
-        const opt = document.createElement('option');
-        opt.id = "theControllerVariableForFastAttk";
-        opt.value = asmFastAttack[index];
-        opt.innerHTML = a;
-        select.appendChild(opt);
-    }
-    for (const [index,a] of asmHeavySupport.entries()){
-        const opt = document.createElement('option');
-        opt.id = "theControllerVariableForHeavy";
-        opt.value = asmHeavySupport[index];
-        opt.innerHTML = a;
-        select.appendChild(opt);
-    }
-    for (const [index,a] of asmLordOfWar.entries()){
-        const opt = document.createElement('option');
-        opt.id = "theControllerVariableforLordOfWar";
-        opt.value = asmLordOfWar[index];
-        opt.innerHTML = a;
-        select.appendChild(opt);
-    }
-    for (const [index,a] of asmTransport.entries()){
-        const opt = document.createElement('option');
-        opt.id = "theControllerVariableForTransport";
-        opt.value = asmTransport[index];
-        opt.innerHTML = a;
-        select.appendChild(opt);
-    }
-    for (const [index,a] of asmFlyer.entries()){
-        const opt = document.createElement('option');
-        opt.id = "theControllerVariableForFlyer";
-        opt.value = asmFlyer[index];
-        opt.innerHTML = a;
-        select.appendChild(opt);
-    }
-    for (const [index,a] of asmFortification.entries()){
-        const opt = document.createElement('option');
-        opt.id = "theControllerVariableForFort";
-        opt.value = asmFortification[index];
-        opt.innerHTML = a;
-        select.appendChild(opt);
-    }
+      //this selects the <select id = "unitDisplayer">
+      const hq = document.getElementById("hq");
+      const troops = document.getElementById("troops");
+      const elites = document.getElementById("elites");
+      const fastattack = document.getElementById("fastattack");
+      const heavysupport = document.getElementById("heavysupport");
+      const lordofwar = document.getElementById("lordofwar");
+      const transport = document.getElementById("transport");
+      const flyer = document.getElementById("flyer");
+      const fortification = document.getElementById("fortification");
+      //Do you like FOR LOOOOOPS?
+  
+      //reads the array
+      for (const [index,a] of asmHQ.entries()){
+          const opt = document.createElement('option');
+          opt.id = "hq";
+          opt.value = [a.slice(0,-9)];
+          opt.innerText = asmHQ[index];
+          hq.appendChild(opt);
+  
+      }
+      for (const [index,a] of asmTroops.entries()){
+          const opt = document.createElement('option');
+          opt.id = "troops";
+          opt.value = [a.slice(0,-9)];
+          opt.innerHTML = a;
+          troops.appendChild(opt);
+      }
+      for (const [index,a] of asmElites.entries()){
+          const opt = document.createElement
+          ('option');
+          opt.id = "elite";
+          opt.value = [a.slice(0,-9)];
+          opt.innerHTML = a;
+          elites.appendChild(opt);
+      }
+      for (const [index,a] of asmFastAttack.entries()){
+          const opt = document.createElement('option');
+          opt.id = "fastattack";
+          opt.value = [a.slice(0,-9)];
+          opt.innerHTML = a;
+          fastattack.appendChild(opt);
+      }
+      for (const [index,a] of asmHeavySupport.entries()){
+          const opt = document.createElement('option');
+          opt.id = "heavysupport";
+          opt.value = [a.slice(0,-9)];
+          opt.innerHTML = a;
+          heavysupport.appendChild(opt);
+      }
+      for (const [index,a] of asmLordOfWar.entries()){
+          const opt = document.createElement('option');
+          opt.id = "lordofwar";
+          opt.value = [a.slice(0,-9)];
+          opt.innerHTML = a;
+          lordofwar.appendChild(opt);
+      }
+      for (const [index,a] of asmTransport.entries()){
+          const opt = document.createElement('option');
+          opt.id = "transport";
+          opt.value = [a.slice(0,-9)];
+          opt.innerHTML = a;
+          transport.appendChild(opt);
+      }
+      for (const [index,a] of asmFlyer.entries()){
+          const opt = document.createElement('option');
+          opt.id = "flyer";
+          opt.value = [a.slice(0,-9)];
+          opt.innerHTML = a;
+          flyer.appendChild(opt);
+      }
+      for (const [index,a] of asmFortification.entries()){
+          const opt = document.createElement('option');
+          opt.id = "fortification";
+          opt.value = [a.slice(0,-9)];
+          opt.innerHTML = a;
+          fortification.appendChild(opt);
+      }
 
 }
 

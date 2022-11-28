@@ -69,16 +69,19 @@ public class WebController {
 	@PostMapping("/newArmy") //starts the process of making a new army! 
 	public String createArmy(Model model) {
 		Army a = new Army();
+		Unit un = new Unit(); //Added Unit for same page inputs.
+		model.addAttribute("newUnit",un);
 		model.addAttribute("newArmy",a);
 		return("createArmy");
 	}
 	
-	@GetMapping("/newArmy") //adds an army!
-	public String createArmy(@ModelAttribute Army a, Model model) {
+	@GetMapping("/newArmy") //adds an army!						//For same page input
+	public String createArmy(@ModelAttribute Army a, @ModelAttribute Unit un, Model model) {
 		List<User> u = repo.findAll();
 		User test = u.get(0);
 		test.getUsersArmies().add(a);
 		armyRepo.save(a);
+		unitRepo.save(un); //same page input
 		repo.save(test);
 		return "navPage";
 	}

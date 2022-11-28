@@ -96,10 +96,14 @@ public class WebController {
 	public String createArmy(@ModelAttribute Army a, @ModelAttribute Unit un, Model model) {
 		//List<User> u = repo.findAll();
 		User test = repo.getById(currentUser); //this finds the signed in user and adds the items to that user; (may want a catch but we should never have an ID that doesn't exist
-		test.getUsersArmies().add(a);
-		armyRepo.save(a);
+		List<Unit> temp = new ArrayList<Unit>();
+		a.setRoster(temp);
 		unitRepo.save(un); //same page input
+		a.getRoster().add(un);
+		armyRepo.save(a);
+		test.getUsersArmies().add(a);
 		repo.save(test);
+		
 		return "navPage";
 	}
 	

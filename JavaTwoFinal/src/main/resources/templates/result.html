@@ -16,7 +16,12 @@ table, th, td {
 <tr th:each="currentUser : ${users}">
  <td th:text= "${currentUser.id}" type="hidden"/>
  <td th:text= "${currentUser.userName}" />
-<td th:text= "${currentUser.userPassword}" />
+ <td th:text= "${currentUser.userPassword}" />
+ <td th:text= "${currentUser.usersArmies}" />
+	<!--<tr th:each="currentArmy : ${currentUser.usersArmies}">
+		<td th:text= "${currentArmy.armyName}" />
+	</tr>
+ </tr> -->
 </table>
 
 

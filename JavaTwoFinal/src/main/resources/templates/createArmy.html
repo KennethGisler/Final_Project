@@ -58,15 +58,34 @@ if(factionValue === "Tau" || factionValue === "Orks" || factionValue === "Astram
 //Creates the <select id=unitDisplayer></select>
 
 document.getElementById("unitBox").innerHTML = 
-"</br>Select HQ: <select id ="+"hq "+"name="+"hq.hq1"+"></select></br></br>"+
-"Select troops: <select id ="+"troops "+"name="+"troops.troop1"+"></select></br></br>"+
-"Select elites: <select id ="+"elites "+"name="+"e.elite1"+"></select></br></br>"+
-"Select fastattack: <select id ="+"fastattack "+"name="+"fa.fa1"+"></select></br></br>"+
-"Select heavysupport: <select id ="+"heavysupport "+"name="+"hs.hs1"+"></select></br></br>"+
-"Select lordofwar: <select id ="+"lordofwar "+"name="+"low.low1"+"></select></br></br>"+
-"Select transport: <select id ="+"transport "+"name="+"dt.dt1"+"></select></br></br>"+
-"Select flyer: <select id ="+"flyer "+"name="+"noObject"+"></select></br></br>"+
-"Select fortification: <select id ="+"fortification "+"name="+"noObject"+"></select></br></br>";
+//HQ SELECT
+"</br>Select HQ: <select id ="+"hq1 "+"name="+"hq.hq1"+"></select> "+
+"SECRET BOX HERE <select id ="+"hqCost1 "+"name="+"hq.hqCost1"+" hidden></select></br></br>"+
+//TROOP SELECT
+"Select troops: <select id ="+"troops1 "+"name="+"troops.troop1"+"></select>"+
+"SECRET BOX HERE <select id ="+"tCost1 "+"name="+"troops.tCost1"+" hidden></select></br></br>"+
+//ELITE SELECT
+"Select elites: <select id ="+"elites1 "+"name="+"e.elite1"+"></select>"+
+"SECRET BOX HERE <select id ="+"eCost1 "+"name="+"e.eCost1"+" hidden></select></br></br>"+
+//FAST ATTACK
+"Select fastattack: <select id ="+"fastattack1 "+"name="+"fa.fa1"+"></select>"+
+"SECRET BOX HERE <select id ="+"faCost1 "+"name="+"fa.faCost1"+" hidden></select></br></br>"+
+//HEAVY
+"Select heavysupport: <select id ="+"heavysupport1 "+"name="+"hs.hs1"+"></select>"+
+"SECRET BOX HERE <select id ="+"hsCost1 "+"name="+"hs.hsCost1"+" hidden></select></br></br>"+
+//LoW
+"Select lordofwar: <select id ="+"lordofwar1 "+"name="+"low.low1"+"></select>"+
+"SECRET BOX HERE <select id ="+"lowCost1 "+"name="+"low.lowCost1"+" hidden></select></br></br>"+
+//Transport
+"Select transport: <select id ="+"transport1 "+"name="+"dt.dt1"+"></select>"+
+"SECRET BOX HERE <select id ="+"dtCost1 "+"name="+"dt.tdCost1"+" hidden></select></br></br>"+
+//Flyer
+"Select flyer: <select id ="+"flyer1 "+"name="+"noObject"+"></select>"+
+"SECRET BOX HERE <select id ="+"flCost1 "+"name="+"noObject"+" hidden></select></br></br>"+
+//Fort
+"Select fortification: <select id ="+"fortification1 "+"name="+"noObject"+"></select>"+
+"SECRET BOX HERE <select id ="+"ftCost1 "+"name="+"noObject"+" hidden></select></br></br>"
+;
 //Also erases error if proper option is selected
 document.getElementById("error").innerHTML = "";
 //Now we populate id unitDisplayer with a new function
@@ -91,6 +110,12 @@ fillAsm();
 } if(factionValue==="Orks"){
 fillOrk();
 }
+}
+
+function changeBoxAtSameTime(){
+	document.getElementById('hq').addEventListener("change", function () {
+    document.getElementById('hqCost').selectedIndex = document.getElementById('hq').selectedIndex;
+}, false);
 }
 
 </script>

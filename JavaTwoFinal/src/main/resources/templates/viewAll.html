@@ -36,22 +36,42 @@ table, th, td {
 <table>
 <tr>
 <th>HQ1</th>
+<th>HQ1COST</th>
 <th>Elite1</th>
+<th>EliteCost</th>
 <th>FA1</th>
+<th>FACost</th>
 <th>HS1</th>
+<th>HSCost</th>
 <th>LOW1</th>
+<th>LOWCost</th>
 <th>DT1</th>
+<th>DTCost</th>
 <th>TROOP1</th>
+<th>TROOPCost</th>
 
 </tr>
 <tr th:each="currentUnits : ${units}">
 <td th:text="${currentUnits.hq.hq1}"/>
+<td th:text="${currentUnits.hq.hqCost1}"/>
+
 <td th:text="${currentUnits.e.elite1}"/>
+<td th:text="${currentUnits.e.eCost1}"/>
+
 <td th:text="${currentUnits.fa.fa1}"/>
+<td th:text="${currentUnits.fa.faCost1}"/>
+
 <td th:text="${currentUnits.hs.hs1}"/>
+<td th:text="${currentUnits.hs.hsCost1}"/>
+
 <td th:text="${currentUnits.low.low1}"/>
+<td th:text="${currentUnits.low.lowCost1}"/>
+
 <td th:text="${currentUnits.dt.dt1}"/>
+<td th:text="${currentUnits.dt.tdCost1}"/>
+
 <td th:text="${currentUnits.troops.troop1}"/>
+<td th:text="${currentUnits.troops.tCost1}"/>
 
 
 

@@ -38,14 +38,27 @@ public class WebController {
 	@PostMapping("/newUser") //starts the process of making a new user!
 	public String createUser(Model model) {
 		User u = new User();
-		//u.setUserName("test");
-		//u.setUserPassword("test");
 		model.addAttribute("newUser",u);
 		return "createUser";
 	}
 	
 	@GetMapping("/newUser") //saves a new user to the data base!
 	public String createUser(@ModelAttribute User u, Model model) {
+		
+		if(repo.findAll().isEmpty()) { //this only matter for the fist user ever made, but i feel as though it is still something good to have.
+			repo.save(u);
+			currentUser = u.getId();
+			System.out.println("The current user is now: " + currentUser); //spits out who is signed in when someone makes a new user
+			return "navPage";
+		}else {
+			for(User test : repo.findAll()) { //sees if you've chosen a name that already exists by going threw the list of users and 
+				if(test.getUserName().equalsIgnoreCase(u.getUserName())) { //checking if your user name matches one that is there. 
+					return createUser(model);
+				}
+			}
+		}
+		
+		
 		repo.save(u);
 		currentUser = u.getId();
 		System.out.println("The current user is now: " + currentUser); //spits out who is signed in when someone makes a new user
@@ -109,8 +122,8 @@ public class WebController {
 		if(repo.findAll().isEmpty()) {
 			return createUser(model);
 		}else {
-			for(User test : repo.findAll()) {
-				if(u.getUserName().equalsIgnoreCase(test.getUserName()) && u.getUserPassword().equals(test.getUserPassword())) {
+			for(User test : repo.findAll()) {  //the below and statement and for loop go threw the whole database to see if the userName exists ignoring case. 
+				if(u.getUserName().equalsIgnoreCase(test.getUserName()) && u.getUserPassword().equals(test.getUserPassword())) { //accept for the password which is case sensitive
 					currentUser = test.getId();
 					System.out.println("The id for that user was " + test.getId() + ", and current User is: " + currentUser); //just to make sure number line up;
 					return "navPage";

@@ -26,6 +26,7 @@ public class WebController {
 	UnitRepository unitRepo;
 	@Autowired
 	ArmyRepository armyRepo;
+	static Long currentUser;//this is a temp variable to keep track of who is signed in!
 	
 	@GetMapping("/viewAll")
 	public String viewAllInfo(Model model) {
@@ -37,8 +38,8 @@ public class WebController {
 	@PostMapping("/newUser") //starts the process of making a new user!
 	public String createUser(Model model) {
 		User u = new User();
-		u.setUserName("test");
-		u.setUserPassword("test");
+		//u.setUserName("test");
+		//u.setUserPassword("test");
 		model.addAttribute("newUser",u);
 		return "createUser";
 	}
@@ -46,6 +47,8 @@ public class WebController {
 	@GetMapping("/newUser") //saves a new user to the data base!
 	public String createUser(@ModelAttribute User u, Model model) {
 		repo.save(u);
+		currentUser = u.getId();
+		System.out.println("The current user is now: " + currentUser); //spits out who is signed in when someone makes a new user
 		return "navPage";
 	}
 	
@@ -77,8 +80,8 @@ public class WebController {
 	
 	@GetMapping("/newArmy") //adds an army!						//For same page input
 	public String createArmy(@ModelAttribute Army a, @ModelAttribute Unit un, Model model) {
-		List<User> u = repo.findAll();
-		User test = u.get(0);
+		//List<User> u = repo.findAll();
+		User test = repo.getById(currentUser); //this finds the signed in user and adds the items to that user; (may want a catch but we should never have an ID that doesn't exist
 		test.getUsersArmies().add(a);
 		armyRepo.save(a);
 		unitRepo.save(un); //same page input
@@ -102,23 +105,30 @@ public class WebController {
 	
 	
 	@PostMapping("/login") //this is called to login from the login page!
-	public String login(Model model) {
-		String test = (String) model.getAttribute("username"); 
-		System.out.println(test);
+	public String login(@ModelAttribute  User u, Model model) {
 		if(repo.findAll().isEmpty()) {
 			return createUser(model);
+		}else {
+			for(User test : repo.findAll()) {
+				if(u.getUserName().equalsIgnoreCase(test.getUserName()) && u.getUserPassword().equals(test.getUserPassword())) {
+					currentUser = test.getId();
+					System.out.println("The id for that user was " + test.getId() + ", and current User is: " + currentUser); //just to make sure number line up;
+					return "navPage";
+				}
+			}	
 		}
-		/*else {
-			for(User u:repo.findAll()) {
-				if()
-			}
-		}*/
 		
-		return "navPage";
+		
+		return loginPage(model);
 	}
 	
 	@GetMapping("/login") //this sends you back to the login page!
 	public String loginPage(Model model){
+		User u = new User();
+		model.addAttribute("user",u);
+		System.out.println("Current user was: " + currentUser); //shows who was last signed in
+		currentUser = (long) -1;
+		System.out.println("Current user is now: " + currentUser); //shows that they are now signed out
 		return "loginPage";
 	}
 	

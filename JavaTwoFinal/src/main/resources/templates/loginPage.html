@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <script type = "text/javascript" >
 	function checkForm(form){
 		if(form.elements["username"].value == ""){
@@ -24,9 +24,9 @@
 <body>
 <h1>Welcome to 40k army builder!</h1>
 <p>Please login to continue.</p>
-<form action="login" method="post" onsubmit= "return checkForm(this);">
-	Username: <input name="username" type="text" /> </br>
-	Password: <input name="password" type="text" /> <br>
+<form th:object="${user}" th:action="login" method="post" onsubmit= "return checkForm(this);">
+	Username: <input name="userName" type="text" /> </br>
+	Password: <input name="userPassword" type="text" /> <br>
 	<input name="submit" type="submit" value="submit" /> 
 </form>
 </br>

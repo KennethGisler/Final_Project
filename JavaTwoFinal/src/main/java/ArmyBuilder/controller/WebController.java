@@ -1,5 +1,6 @@
 package ArmyBuilder.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -144,6 +145,28 @@ public class WebController {
 		System.out.println("Current user is now: " + currentUser); //shows that they are now signed out
 		return "loginPage";
 	}
+	
+	@PostMapping("/viewMyUser")
+	public String viewMyUser(Model model) {
+		List<User> temp = new ArrayList<User>(); 
+ 		if(repo.findAll().isEmpty()) {
+			return createUser(model);
+		}else {
+			for(User u : repo.findAll()) {
+				if(u.getId() == currentUser) {
+					temp.add(u);
+				}
+			}
+			model.addAttribute("users", temp);
+			return "result";
+		}
+		
+		//return "result";
+	}
+	
+	
+	
+	
 	
 	@GetMapping({"/viewUnits"})
 	public String viewSavedUnits(Model model) {

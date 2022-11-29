@@ -12,8 +12,8 @@ import lombok.Data;
 @Embeddable
 @Data
 public class Fortification {
-	private String fortName1, fortName2, fortName3;
-	private int fortCost1, fortCost2,fortCost3;
+	private String fort1, fort2, fort3;
+	private int ftCost1, ftCost2,ftCost3;
 	
 	//constructors
 	public Fortification() {
@@ -22,11 +22,11 @@ public class Fortification {
 	public Fortification(String fortName1, String fortName2, String fortName3, int fortCost1, int fortCost2,
 			int fortCost3) {
 		super();
-		this.fortName1 = fortName1;
-		this.fortName2 = fortName2;
-		this.fortName3 = fortName3;
-		this.fortCost1 = fortCost1;
-		this.fortCost2 = fortCost2;
-		this.fortCost3 = fortCost3;
+		this.fort1 = fortName1;
+		this.fort2 = fortName2;
+		this.fort3 = fortName3;
+		this.ftCost1 = fortCost1;
+		this.ftCost2 = fortCost2;
+		this.ftCost3 = fortCost3;
 	}
 }

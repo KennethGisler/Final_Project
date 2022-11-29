@@ -12,8 +12,8 @@ import lombok.Data;
 @Embeddable
 @Data
 public class Flyer {
-	String flyName1, flyName2;
-	int flyCost1, flyCost2;
+	String fly1, fly2;
+	int flCost1, flCost2;
 	
 	//constructors
 	public Flyer() {
@@ -21,10 +21,10 @@ public class Flyer {
 	}
 	public Flyer(String flyName1, String flyName2, int flyCost1, int flyCost2) {
 		super();
-		this.flyName1 = flyName1;
-		this.flyName2 = flyName2;
-		this.flyCost1 = flyCost1;
-		this.flyCost2 = flyCost2;
+		this.fly1 = flyName1;
+		this.fly2 = flyName2;
+		this.flCost1 = flyCost1;
+		this.flCost2 = flyCost2;
 	}
 	
 }

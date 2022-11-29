@@ -29,4 +29,10 @@ public class HQ {
 		this.hqCost3 = cost3;
 	}
 	
+	
+	//methods
+	public int getTotal() {
+		int tot = hqCost1 + hqCost2 + hqCost3;
+		return tot;
+	}
 }

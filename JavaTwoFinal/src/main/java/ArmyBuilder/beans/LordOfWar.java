@@ -34,5 +34,10 @@ public class LordOfWar {
 		this.lowCost5 = cost5;
 	}
 	
+	//methods
+	public int getTotal() {
+		int tot = lowCost1 + lowCost2 + lowCost3 + lowCost4 + lowCost5;
+		return tot; //adds all the costs and returns that value
+	}
 	
 }

@@ -100,6 +100,7 @@ public class WebController {
 		a.setRoster(temp);
 		unitRepo.save(un); //same page input
 		a.getRoster().add(un);
+		a.setPointsTotal(un.getTotal());
 		armyRepo.save(a);
 		test.getUsersArmies().add(a);
 		repo.save(test);

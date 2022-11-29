@@ -36,4 +36,9 @@ public class DedicatedTransport{
 		this.tdCost6 = cost6;
 	}
 	
+	//methods
+	public int getTotal() {
+		int tot = tdCost1 + tdCost2 + tdCost3 + tdCost4 + tdCost5 + tdCost6;
+		return tot;
+	} 
 }

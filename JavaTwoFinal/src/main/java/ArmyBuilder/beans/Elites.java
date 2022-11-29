@@ -36,5 +36,9 @@ public class Elites{
 		this.eCost6 = cost6;
 	}
 	
-	
+	//methods
+	public int getTotal() {
+		int tot =  eCost1 + eCost2 + eCost3 + eCost4 + eCost5 + eCost6;
+		return tot;
+	}
 }

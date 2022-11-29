@@ -29,4 +29,10 @@ public class Fortification {
 		this.ftCost2 = fortCost2;
 		this.ftCost3 = fortCost3;
 	}
+	
+	//methods
+		public int getTotal() {
+			int tot = ftCost1 + ftCost2 + ftCost3;
+			return tot;
+		}
 }

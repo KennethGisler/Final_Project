@@ -29,6 +29,10 @@ public class HeavySupport{
 		this.hsCost3 = cost3;
 	}
 
-	
+	//methods
+	public int getTotal() {
+		int tot = hsCost1 + hsCost2 + hsCost3;
+		return tot;
+	}
 	
 }

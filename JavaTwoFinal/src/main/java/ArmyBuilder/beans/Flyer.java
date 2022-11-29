@@ -27,4 +27,9 @@ public class Flyer {
 		this.flCost2 = flyCost2;
 	}
 	
+	//methods
+	public int getTotal() {
+		int tot = flCost1 + flCost2;
+		return tot;
+	}
 }

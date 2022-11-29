@@ -29,5 +29,9 @@ public class FastAttack{
 		this.faCost3 = cost3;
 	}
 	
-	
+	//methods
+	public int getTotal() {
+		int tot = faCost1 + faCost2 + faCost3;
+		return tot;
+	}
 }

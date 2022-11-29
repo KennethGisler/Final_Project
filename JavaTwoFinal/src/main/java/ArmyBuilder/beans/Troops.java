@@ -41,4 +41,10 @@ public class Troops  {
 		this.tCost1 = cost1;
 	}
 	
+	//methods
+	public int getTotal() {
+		int tot = tCost1 + tCost2 + tCost3 + tCost4 + tCost4 + tCost5 + tCost6;
+		return tot; //tallies up the costs and send back the total of them all.
+	}
+	
 }

@@ -35,9 +35,14 @@ public class Unit {
 	private LordOfWar low;
 	@Autowired
 	private Elites e;
-	@Autowired
+	/*@Autowired
 	private Flyer fly;
 	@Autowired
-	private Fortification fort;
+	private Fortification fort;*/
 	
+	//methods
+	public int getTotal() {
+		int tot = troops.getTotal() + hs.getTotal() + hq.getTotal() + fa.getTotal() + dt.getTotal() + low.getTotal() + e.getTotal();
+		return tot;
+	}
 }

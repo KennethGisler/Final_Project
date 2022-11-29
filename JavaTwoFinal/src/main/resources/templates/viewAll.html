@@ -35,35 +35,81 @@ table, th, td {
 </br>
 <table>
 <tr>
+<!--HQ-->
 <th>HQ1</th>
 <th>HQ1COST</th>
+<th>HQ2</th>
+<th>HQ2COST</th>
+<th>hq3</th>
+<th>HQ3COST</th>
+<!--Elite-->
 <th>Elite1</th>
 <th>EliteCost</th>
+<th>Elite2</th>
+<th>EliteCost</th>
+<th>Elite3</th>
+<th>EliteCost</th>
+<th>Elite4</th>
+<th>EliteCost</th>
+<th>Elite5</th>
+<th>EliteCost</th>
+<th>Elite6</th>
+<th>EliteCost</th>
+<!--Fast Attack-->
 <th>FA1</th>
 <th>FACost</th>
+<!--Heavy Support-->
 <th>HS1</th>
 <th>HSCost</th>
+<!--Lord of War-->
 <th>LOW1</th>
 <th>LOWCost</th>
+<!--Transport-->
 <th>DT1</th>
 <th>DTCost</th>
+<!--Troop-->
 <th>TROOP1</th>
+<th>TROOPCost</th>
+<th>TROOP2</th>
+<th>TROOPCost</th>
+<th>TROOP3</th>
+<th>TROOPCost</th>
+<th>TROOP4</th>
+<th>TROOPCost</th>
+<th>TROOP5</th>
+<th>TROOPCost</th>
+<th>TROOP6</th>
 <th>TROOPCost</th>
 
 </tr>
 <tr th:each="currentUnits : ${units}">
+  <!--HQ-->
 <td th:text="${currentUnits.hq.hq1}"/>
 <td th:text="${currentUnits.hq.hqCost1}"/>
-
+<td th:text="${currentUnits.hq.hq2}"/>
+<td th:text="${currentUnits.hq.hqCost2}"/>
+<td th:text="${currentUnits.hq.hq3}"/>
+<td th:text="${currentUnits.hq.hqCost3}"/>
+<!--Elite-->
 <td th:text="${currentUnits.e.elite1}"/>
 <td th:text="${currentUnits.e.eCost1}"/>
-
+<td th:text="${currentUnits.e.elite2}"/>
+<td th:text="${currentUnits.e.eCost2}"/>
+<td th:text="${currentUnits.e.elite3}"/>
+<td th:text="${currentUnits.e.eCost3}"/>
+<td th:text="${currentUnits.e.elite4}"/>
+<td th:text="${currentUnits.e.eCost4}"/>
+<td th:text="${currentUnits.e.elite5}"/>
+<td th:text="${currentUnits.e.eCost5}"/>
+<td th:text="${currentUnits.e.elite6}"/>
+<td th:text="${currentUnits.e.eCost6}"/>
+<!--Fast Attack-->
 <td th:text="${currentUnits.fa.fa1}"/>
 <td th:text="${currentUnits.fa.faCost1}"/>
-
+<!--Heavy Support-->
 <td th:text="${currentUnits.hs.hs1}"/>
 <td th:text="${currentUnits.hs.hsCost1}"/>
-
+<!--Lord of War-->
 <td th:text="${currentUnits.low.low1}"/>
 <td th:text="${currentUnits.low.lowCost1}"/>
 
@@ -72,6 +118,16 @@ table, th, td {
 
 <td th:text="${currentUnits.troops.troop1}"/>
 <td th:text="${currentUnits.troops.tCost1}"/>
+<td th:text="${currentUnits.troops.troop2}"/>
+<td th:text="${currentUnits.troops.tCost2}"/>
+<td th:text="${currentUnits.troops.troop3}"/>
+<td th:text="${currentUnits.troops.tCost3}"/>
+<td th:text="${currentUnits.troops.troop4}"/>
+<td th:text="${currentUnits.troops.tCost4}"/>
+<td th:text="${currentUnits.troops.troop5}"/>
+<td th:text="${currentUnits.troops.tCost5}"/>
+<td th:text="${currentUnits.troops.troop6}"/>
+<td th:text="${currentUnits.troops.tCost6}"/>
 
 
 

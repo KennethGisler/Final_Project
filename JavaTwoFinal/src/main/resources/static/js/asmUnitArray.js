@@ -51,7 +51,7 @@ const asmFlyer = [
 ];
 
 //No Fortifications
-const asmFortification = [];
+const asmFortification = ["Test", 1];
 
 
 
@@ -98,8 +98,11 @@ function fillAsm(){
     const transport6 = document.getElementById("transport6");
     //Flyer
     const flyer = document.getElementById("flyer1");
+    const flyer2 = document.getElementById("flyer2");
     //Fort
-    const fortification = document.getElementById("fortification1");
+   // const fortification = document.getElementById("fortification1");
+    //const fortification2 = document.getElementById("fortification2");
+   // const fortification3 = document.getElementById("fortification3");
     //Do you like FOR LOOOOOPS?
 
     //reads the array
@@ -350,14 +353,36 @@ function fillAsm(){
         opt.innerHTML = a;
         flyer.appendChild(opt);
     }
-    //Fortification
-    /*1*/for (const [index,a] of asmFortification.entries()){
+    /*2*/ for (const [index,a] of asmFlyer.entries()){
+        const opt = document.createElement('option');
+        opt.id = "flyer";
+        opt.value = [a.slice(0,-1)];
+        opt.innerHTML = a;
+        flyer2.appendChild(opt);
+    }
+    
+   //Fortification
+    /*1 for (const [index,a] of asmFortification.entries()){
         const opt = document.createElement('option');
         opt.id = "fortification";
         opt.value = [a.slice(0,-1)];
         opt.innerHTML = a;
         fortification.appendChild(opt);
     }
+    /*2 for (const [index,a] of asmFortification.entries()){
+        const opt = document.createElement('option');
+        opt.id = "fortification";
+        opt.value = [a.slice(0,-1)];
+        opt.innerHTML = a;
+        fortification2.appendChild(opt);
+    }
+    /*3for (const [index,a] of asmFortification.entries()){
+        const opt = document.createElement('option');
+        opt.id = "fortification";
+        opt.value = [a.slice(0,-1)];
+        opt.innerHTML = a;
+        fortification3.appendChild(opt);
+    } */
 
 fillasmCost();
 }
@@ -406,9 +431,12 @@ function fillasmCost(){
    const transport6 = document.getElementById("dtCost6");
    
     //flyer
-   const flyer1 = document.getElementById("flCost1");
+   const flyer = document.getElementById("flCost1");
+   const flyer2 = document.getElementById("flCost2");
     //fort
-   const fortification1 = document.getElementById("ftCost1");
+   //const fortification = document.getElementById("ftCost1");
+   //const fortification2 = document.getElementById("ftCost2");
+   //const fortification3 = document.getElementById("ftCost3");
    //Do you like FOR LOOOOOPS?
 
    //HQ
@@ -767,6 +795,17 @@ document.getElementById('transport6').addEventListener("change", function () {
 document.getElementById('flyer1').addEventListener("change", function () {
     document.getElementById('flCost1').selectedIndex = document.getElementById('flyer1').selectedIndex;
 }, false);
+/*2*/for (const [index,a] of asmFlyer.entries()){
+    const opt = document.createElement('option');
+    opt.id = "flyer";
+    opt.value = asmFlyer[index][1];
+    opt.innerText = asmFlyer[index][1];
+    flyer2.appendChild(opt);
+}
+document.getElementById('flyer2').addEventListener("change", function () {
+    document.getElementById('flCost2').selectedIndex = document.getElementById('flyer2').selectedIndex;
+}, false);
+
 //Fort
 /*1*/for (const [index,a] of asmFortification.entries()){
     const opt = document.createElement('option');
@@ -778,6 +817,25 @@ document.getElementById('flyer1').addEventListener("change", function () {
 document.getElementById('fortification1').addEventListener("change", function () {
     document.getElementById('ftCost1').selectedIndex = document.getElementById('fortification1').selectedIndex;
 }, false);
-
+/*2*/for (const [index,a] of asmFortification.entries()){
+    const opt = document.createElement('option');
+    opt.id = "fortification";
+    opt.value = asmFortification[index][1];
+    opt.innerText = asmFortification[index][1];
+    fortification2.appendChild(opt);
+}
+document.getElementById('fortification2').addEventListener("change", function () {
+    document.getElementById('ftCost2').selectedIndex = document.getElementById('fortification2').selectedIndex;
+}, false);
+/*3*/for (const [index,a] of asmFortification.entries()){
+    const opt = document.createElement('option');
+    opt.id = "fortification";
+    opt.value = asmFortification[index][1];
+    opt.innerText = asmFortification[index][1];
+    fortification3.appendChild(opt);
+}
+document.getElementById('fortification3').addEventListener("change", function () {
+    document.getElementById('ftCost3').selectedIndex = document.getElementById('fortification3').selectedIndex;
+}, false);
 
 }

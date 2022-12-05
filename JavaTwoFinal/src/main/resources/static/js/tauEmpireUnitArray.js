@@ -97,6 +97,7 @@ function fillTau(){
     const transport6 = document.getElementById("transport6");
     //Flyer
     const flyer = document.getElementById("flyer1");
+    const flyer2 = document.getElementById("flyer2");
     //Fort
     const fortification = document.getElementById("fortification1");
     //Do you like FOR LOOOOOPS?
@@ -349,15 +350,22 @@ function fillTau(){
         opt.innerHTML = a;
         flyer.appendChild(opt);
     }
+  /*2*/ for (const [index,a] of tauFlyer.entries()){
+        const opt = document.createElement('option');
+        opt.id = "flyer";
+        opt.value = [a.slice(0,-1)];
+        opt.innerHTML = a;
+        flyer2.appendChild(opt);
+    }
     //Fortification
-    /*1*/for (const [index,a] of tauFortification.entries()){
+    /*1for (const [index,a] of tauFortification.entries()){
         const opt = document.createElement('option');
         opt.id = "fortification";
         opt.value = [a.slice(0,-1)];
         opt.innerHTML = a;
         fortification.appendChild(opt);
     }
-
+*/
 fillTauCost();
 }
 
@@ -405,9 +413,10 @@ function fillTauCost(){
    const transport6 = document.getElementById("dtCost6");
    
     //flyer
-   const flyer1 = document.getElementById("flCost1");
+   const flyer = document.getElementById("flCost1");
+   const flyer2 = document.getElementById("flCost1");
     //fort
-   const fortification1 = document.getElementById("ftCost1");
+   const fortification = document.getElementById("ftCost1");
    //Do you like FOR LOOOOOPS?
 
    //HQ
@@ -766,8 +775,19 @@ document.getElementById('transport6').addEventListener("change", function () {
 document.getElementById('flyer1').addEventListener("change", function () {
     document.getElementById('flCost1').selectedIndex = document.getElementById('flyer1').selectedIndex;
 }, false);
+
+/*2*/for (const [index,a] of tauFlyer.entries()){
+    const opt = document.createElement('option');
+    opt.id = "flyer";
+    opt.value = tauFlyer[index][1];
+    opt.innerText = tauFlyer[index][1];
+    flyer2.appendChild(opt);
+}
+document.getElementById('flyer2').addEventListener("change", function () {
+    document.getElementById('flCost2').selectedIndex = document.getElementById('flyer2').selectedIndex;
+}, false);
 //Fort
-/*1*/for (const [index,a] of tauFortification.entries()){
+/*1for (const [index,a] of tauFortification.entries()){
     const opt = document.createElement('option');
     opt.id = "fortification";
     opt.value = tauFortification[index][1];
@@ -778,5 +798,5 @@ document.getElementById('fortification1').addEventListener("change", function ()
     document.getElementById('ftCost1').selectedIndex = document.getElementById('fortification1').selectedIndex;
 }, false);
 
-
+*/
 }

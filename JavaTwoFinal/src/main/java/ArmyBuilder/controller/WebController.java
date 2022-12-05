@@ -66,23 +66,6 @@ public class WebController {
 		return "navPage";
 	}
 	
-	@PostMapping("/newUnit")
-	public String createUnit(Model model) {
-		Unit u = new Unit();
-		model.addAttribute("newUnit",u);
-		return("temp");
-	}
-	
-	@GetMapping("/newUnit")
-	public String createUnit(@ModelAttribute Unit u, Model model) {
-		List<Army> a = armyRepo.findAll();
-		Army test = a.get(0);
-		test.getRoster().add(u);
-		unitRepo.save(u);
-		armyRepo.save(test);
-		return"navPage";
-	}
-	
 	@PostMapping("/newArmy") //starts the process of making a new army! 
 	public String createArmy(Model model) {
 		Army a = new Army();
@@ -107,7 +90,11 @@ public class WebController {
 		
 		return "navPage";
 	}
-	
+	//return to menu fix
+	@PostMapping("/navPage")
+	public String navPage(Model model) {
+		return("navPage");
+	}
 	@PostMapping("/viewUsers") //shows you all the users.
 	public String viewUsers(Model model) {
 		if(repo.findAll().isEmpty()) {
@@ -169,51 +156,5 @@ public class WebController {
 		//return "result";
 	}
 	
-	
-	
-	
-	
-	@GetMapping({"/viewUnits"})
-	public String viewSavedUnits(Model model) {
-		if(unitRepo.findAll().isEmpty()) {
-			return addNewUnits(model);
-		}
-		model.addAttribute("units", unitRepo.findAll());
-		return "result";
-	}
-	@GetMapping("/inputUnits")
-	private String addNewUnits(Model model) {
-		Unit un = new Unit();
-		model.addAttribute("newUnit",un);
-		return "input";
-	}
-	@PostMapping("/inputUnits")
-	public String addNewContact(@ModelAttribute Unit un, Model model) {
-		unitRepo.save(un);
-		return viewSavedUnits(model);
-	}
-	@GetMapping("edit/{id}")
-	public String showUpdateOrder(@PathVariable("id") long id, Model model) {
-		Unit un = unitRepo.findById(id).orElse(null);
-		model.addAttribute("newUnit", un);
-		return "input";
-	}
-	@PostMapping("/update/{id}")
-	public String reviseOrder(Unit un, Model model) {
-		unitRepo.save(un);
-		return viewSavedUnits(model);
-	}
-	@GetMapping("/delete/{id}")
-	public String deleteOrder(@PathVariable("id") long id, Model model) {
-		Unit un = unitRepo.findById(id).orElse(null);
-		unitRepo.delete(un);
-		return viewSavedUnits(model);
-	}
-	
-	@PostMapping("/navPage")
-	public String toNavPage(Model model) {
-		return "navPage";
-	}
-
 
 }

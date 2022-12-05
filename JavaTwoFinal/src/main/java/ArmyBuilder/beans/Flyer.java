@@ -12,17 +12,17 @@ import lombok.Data;
 @Embeddable
 @Data
 public class Flyer {
-	String fly1, fly2;
+	String flyer1, flyer2;
 	int flCost1, flCost2;
 	
 	//constructors
 	public Flyer() {
 		super();
 	}
-	public Flyer(String flyName1, String flyName2, int flyCost1, int flyCost2) {
+	public Flyer(String flyer1, String flyer2, int flyCost1, int flyCost2) {
 		super();
-		this.fly1 = flyName1;
-		this.fly2 = flyName2;
+		this.flyer1 = flyer1;
+		this.flyer2 = flyer2;
 		this.flCost1 = flyCost1;
 		this.flCost2 = flyCost2;
 	}

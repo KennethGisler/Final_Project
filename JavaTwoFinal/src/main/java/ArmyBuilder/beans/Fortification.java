@@ -19,15 +19,15 @@ public class Fortification {
 	public Fortification() {
 		super();
 	}
-	public Fortification(String fortName1, String fortName2, String fortName3, int fortCost1, int fortCost2,
-			int fortCost3) {
+	public Fortification(String ft1, String ft2, String ft3, int ftCost1, int ftCost2,
+			int ftCost3) {
 		super();
-		this.fort1 = fortName1;
-		this.fort2 = fortName2;
-		this.fort3 = fortName3;
-		this.ftCost1 = fortCost1;
-		this.ftCost2 = fortCost2;
-		this.ftCost3 = fortCost3;
+		this.fort1 = ft1;
+		this.fort2 = ft2;
+		this.fort3 = ft3;
+		this.ftCost1 = ftCost1;
+		this.ftCost2 = ftCost2;
+		this.ftCost3 = ftCost3;
 	}
 	
 	//methods

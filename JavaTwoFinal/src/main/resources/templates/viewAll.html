@@ -3,17 +3,7 @@
   <head th:replace="header :: headNorm"></head>
 <body>
   <nav th:replace="header :: nav"></nav>
-<table>
-<tr>
-<th>Name of User</th>
-<th>Password of User</th>
-</tr>
-<tr th:each="currentUser : ${users}">
- <td style="display:none;" th:text= "${currentUser.id}" type="hidden"/>
- <td th:text= "${currentUser.userName}" />
-<td th:text= "${currentUser.userPassword}" />
-</table>
-</br>
+
 <table>
 <tr>
 <th>Name of Army</th>

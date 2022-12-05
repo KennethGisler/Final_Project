@@ -50,8 +50,9 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" th:fragment="nav">
     <div class="container">
-      <a class="navbar-brand" href="#">Army Builder</a>
-
+      <form class="nav-link" action="navPage" method= post >
+        <input type="submit" name="submit" value="Army Builder" />
+      </form>
       </button>
 
       <div class="collapse navbar-collapse">
@@ -62,22 +63,16 @@
               <input name="submit" type="submit" value="View Armies"/>
             </form>
             </li>
-
-          <li class="nav-item">
-          <form class="nav-link" action="navPage" method= post >
-            <input type="submit" name="submit" value="Navigate" />
-          </form>
-          </li>
-
+            
           <li class="nav-item">
             <form class="nav-link" action="viewMyUser" method="post">
-              <input type="submit" name="submit" value="See your profile!" />
+              <input type="submit" name="submit" value="Profile" />
             </form>
           </li>
 
           <li class="nav-item">
             <form class="nav-link" action="newArmy" method="post">
-              <input type="submit" name="submit" value="New Army" />
+              <input type="submit" name="submit" value="Create a New Army" />
             </form>            
           </li>
 

@@ -4,67 +4,90 @@
 <body>
   <nav th:replace="header :: nav"></nav>
 
-<table>
+<table class="table">
+<thead>
 <tr>
 <th>Name of Army</th>
 <th>Faction of Army</th>
 <th>Cost of Army</th>
+<th>Edit?</th>
+<th>Delete?</th>
 </tr>
+</thead>
+<tbody>
 <tr th:each="currentArmy : ${armies}">
 <td th:text="${currentArmy.armyName}"/>
 <td th:text="${currentArmy.factionName}"/>
 <td th:text="${currentArmy.pointsTotal}"/>
+<td>
+  Controller needs made. HTML that has Units needs made.
+<form action="newArmy" method="post">
+  <input type="submit" name="submit" value="Edit?" />
+</form>
+</td>
+<td>
+  Controller needs made.
+  <form action="newArmy" method="post">
+    <input type="submit" name="submit" value="Delete?" />
+  </form>
+  </td>
+</tr>
+
+
+</tbody>
 </table>
 </br>
-<table>
+<table class="table">
+<thead>
 <tr>
 <!--HQ-->
 <th>HQ1</th>
-<th>HQ1COST</th>
+<th>COST</th>
 <th>HQ2</th>
-<th>HQ2COST</th>
-<th>hq3</th>
-<th>HQ3COST</th>
+<th>COST</th>
+<th>HQ3</th>
+<th>COST</th>
 <!--Elite-->
 <th>Elite1</th>
-<th>EliteCost</th>
+<th>Cost</th>
 <th>Elite2</th>
-<th>EliteCost</th>
+<th>Cost</th>
 <th>Elite3</th>
-<th>EliteCost</th>
+<th>Cost</th>
 <th>Elite4</th>
-<th>EliteCost</th>
+<th>Cost</th>
 <th>Elite5</th>
-<th>EliteCost</th>
+<th>Cost</th>
 <th>Elite6</th>
-<th>EliteCost</th>
+<th>Cost</th>
 <!--Fast Attack-->
 <th>FA1</th>
-<th>FACost</th>
+<th>Cost</th>
 <!--Heavy Support-->
 <th>HS1</th>
-<th>HSCost</th>
+<th>Cost</th>
 <!--Lord of War-->
 <th>LOW1</th>
-<th>LOWCost</th>
+<th>Cost</th>
 <!--Transport-->
 <th>DT1</th>
-<th>DTCost</th>
+<th>Cost</th>
 <!--Troop-->
 <th>TROOP1</th>
-<th>TROOPCost</th>
+<th>Cost</th>
 <th>TROOP2</th>
-<th>TROOPCost</th>
+<th>Cost</th>
 <th>TROOP3</th>
-<th>TROOPCost</th>
+<th>Cost</th>
 <th>TROOP4</th>
-<th>TROOPCost</th>
+<th>Cost</th>
 <th>TROOP5</th>
-<th>TROOPCost</th>
+<th>Cost</th>
 <th>TROOP6</th>
-<th>TROOPCost</th>
+<th>Cost</th>
 
 </tr>
+</thead>
 <tr th:each="currentUnits : ${units}">
   <!--HQ-->
 <td th:text="${currentUnits.hq.hq1}"/>

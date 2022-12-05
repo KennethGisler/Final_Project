@@ -1,44 +1,29 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="ISO-8859-1">
-<title>Army Builder - Create New Army</title>
-
-  
-    <!--<link rel="stylesheet" type="text/css" href="css/stylesheet.css">!-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@700&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
-    <!--JS For Factions-->
-    <script src = "../js/factionArray.js"></script>
-
-    <meta charset="UTF-8">
-
-    <meta name="description" content="Add a bunch of units">
-
-    <meta name="keywords" content="school, grades, websites, javascript, turtles">
-    <script src = "../js/asmUnitArray.js"></script>
-    <script src = "../js/orksUnitArray.js"></script>
-    <script src = "../js/tauEmpireUnitArray.js"></script>
-
-</head>
+<head th:replace="header :: headArmy"></head>
 <body>
+  <nav th:replace="header :: nav"></nav>
 <h1>Build your Army</h1>
 
 <!-- Form for the Army Name/Faction and Points-->
 <form form th:object="${newArmy}" th:action="newArmy" method="get" >
-		Army Name: <input name="armyName" type="text"> </br></br>
+		<h3>Army Name: <input name="armyName" type="text"></h3>
+<fieldset>
 		Factions: <select name="factionName" id="factionName" onchange="chooseUnitsToList()">
 					<script>loadFactions();</script>
 				  </select>
+</fieldset>
+<fieldset>
 	<div th:object="${newUnit}" th:action="newUnit" method="get">
 		<!--Unit Box; where the units populate.-->
 		<span id="unitBox"></span>
 		<span id="error"></span>
 	</div> 
-		
-		<input name="submit" type ="submit" value="submit" />
+</fieldset>
+		<input name="submit" type ="submit" value="Create Army" />
 </form>
-
+<form action="navPage" method= post >
+	<input type="submit" name="submit" value="Return to Menu" />
+</form>
 </body>
 </html>

@@ -35,10 +35,10 @@ public class Unit {
 	private LordOfWar low;
 	@Autowired
 	private Elites e;
-	/*@Autowired
-	private Flyer fly;
 	@Autowired
-	private Fortification fort;*/
+	private Flyer fl;
+	//@Autowired
+	//private Fortification ft;
 	
 	//methods
 	public int getTotal() {

@@ -17,16 +17,32 @@
 	return true
 }
 </script>
-<head>
-<meta charset="ISO-8859-1">
-<title>Let's Make a new user!</title>
-</head>
+<head th:replace="header :: headNorm"></head>
 <body>
-<h1>Enter your new profile name and password:</h1>
-	<form th:object="${newUser}" th:action="newUser" method="get" onsubmit= "return checkForm(this);">
-		Username: <input name="userName" type="text"> </br>
-		Password: <input name="userPassword" type="text"> </br>
-		<input name="submit" type ="submit" value="submit" />
-	</form>
+
+	<div class="text-center">
+		<h1>Register an Account</h1>
+		</div>
+
+		<section class="w-100 p-4 d-flex justify-content-center pb-4">
+		<form th:object="${user}" th:action="newUser" method="get" onsubmit= "return checkForm(this);">
+		<!-- Email input -->
+		<div class="form-outline mb-4">
+			<input type="username" id="form1" name="userName" class="form-control" />
+			<label class="form-label" for="form1">Username</label>
+		  </div>
+		
+		  <!-- Password input -->
+		  <div class="form-outline mb-4">
+			<input type="password" id="form2" name="userPassword" class="form-control" />
+			<label class="form-label" for="form2">Password</label>
+		  </div>
+		
+		  <!-- Submit button -->
+		  <input type="submit" class="btn btn-primary btn-block mb-4" value="Login"></button>
+		
+		  <!-- Register buttons -->
+		 
+		</form>
 </body>
 </html>

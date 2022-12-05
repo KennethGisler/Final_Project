@@ -100,7 +100,7 @@ function fillOrk(){
     const flyer = document.getElementById("flyer1");
     const flyer2 = document.getElementById("flyer2");
     //Fort
-   // const fortification = document.getElementById("fortification1");
+    //const fortification = document.getElementById("fortification1");
     //Do you like FOR LOOOOOPS?
 
     //reads the array
@@ -416,8 +416,9 @@ function fillorkCost(){
     //flyer
    const flyer = document.getElementById("flCost1");
    const flyer2 = document.getElementById("flCost2");
-    //fort
-  // const fortification = document.getElementById("ftCost1");
+
+    //fort Disabled because error
+   //const fortification = document.getElementById("ftCost1");
    //Do you like FOR LOOOOOPS?
 
    //HQ
@@ -793,10 +794,10 @@ document.getElementById('flyer2').addEventListener("change", function () {
     opt.value = orkFortification[index][1];
     opt.innerText = orkFortification[index][1];
     fortification.appendChild(opt);
-}
-document.getElementById('fortification1').addEventListener("change", function () {
+}*/
+/*document.getElementById('fortification1').addEventListener("change", function () {
     document.getElementById('ftCost1').selectedIndex = document.getElementById('fortification1').selectedIndex;
-}, false);
-*/
+}, false);*/
+
 
 }

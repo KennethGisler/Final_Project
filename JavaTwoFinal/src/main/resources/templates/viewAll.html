@@ -1,15 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-<style>
-table, th, td {
-  border:1px solid black;
-}
-</style>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
+  <head th:replace="header :: headNorm"></head>
 <body>
+  <nav th:replace="header :: nav"></nav>
 <table>
 <tr>
 <th>Name of User</th>
@@ -132,6 +125,5 @@ table, th, td {
 
 
 </table>
-
 </body>
 </html>

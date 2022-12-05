@@ -99,7 +99,7 @@ function fillTau(){
     const flyer = document.getElementById("flyer1");
     const flyer2 = document.getElementById("flyer2");
     //Fort
-    const fortification = document.getElementById("fortification1");
+   // const fortification = document.getElementById("fortification1");
     //Do you like FOR LOOOOOPS?
 
     //reads the array
@@ -358,14 +358,13 @@ function fillTau(){
         flyer2.appendChild(opt);
     }
     //Fortification
-    /*1for (const [index,a] of tauFortification.entries()){
+    /*1xfor (const [index,a] of tauFortification.entries()){
         const opt = document.createElement('option');
         opt.id = "fortification";
         opt.value = [a.slice(0,-1)];
         opt.innerHTML = a;
         fortification.appendChild(opt);
-    }
-*/
+    }*/
 fillTauCost();
 }
 
@@ -416,7 +415,7 @@ function fillTauCost(){
    const flyer = document.getElementById("flCost1");
    const flyer2 = document.getElementById("flCost1");
     //fort
-   const fortification = document.getElementById("ftCost1");
+   //const fortification = document.getElementById("ftCost1");
    //Do you like FOR LOOOOOPS?
 
    //HQ
@@ -787,16 +786,15 @@ document.getElementById('flyer2').addEventListener("change", function () {
     document.getElementById('flCost2').selectedIndex = document.getElementById('flyer2').selectedIndex;
 }, false);
 //Fort
-/*1for (const [index,a] of tauFortification.entries()){
+/*1 or (const [index,a] of tauFortification.entries()){
     const opt = document.createElement('option');
     opt.id = "fortification";
     opt.value = tauFortification[index][1];
     opt.innerText = tauFortification[index][1];
     fortification.appendChild(opt);
-}
-document.getElementById('fortification1').addEventListener("change", function () {
+}*/
+/*document.getElementById('fortification1').addEventListener("change", function () {
     document.getElementById('ftCost1').selectedIndex = document.getElementById('fortification1').selectedIndex;
-}, false);
+}, false);*/
 
-*/
 }

@@ -23,6 +23,7 @@
 <div class="text-center">
 	<h1>Login</h1>
 </div>
+
 	<section class="w-100 p-4 d-flex justify-content-center pb-4">
 	<form th:object="${user}" th:action="login" method="post" onsubmit= "return checkForm(this);">
 	<!-- Email input -->
@@ -50,6 +51,9 @@
 			<input class="btn btn-dark btn-block mb-2" name="submit" type="submit" value="Register Now!" />
 		</form>
 	</form>
+
+
 	</section>
+</div>
 </body>
 </html>

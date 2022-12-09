@@ -65,7 +65,6 @@ public class WebController {
 		System.out.println("The current user is now: " + currentUser); //spits out who is signed in when someone makes a new user
 		return "navPage";
 	}
-	
 	@PostMapping("/newArmy") //starts the process of making a new army! 
 	public String createArmy(Model model) {
 		Army a = new Army();

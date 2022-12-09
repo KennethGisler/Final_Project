@@ -122,7 +122,7 @@ document.getElementById("error").innerHTML = "";
 populateFactionUnitList();
 } else {
 //returns error
-document.getElementById("error").innerHTML ="<h1>Pick a Faction</h1>"
+document.getElementById("error").innerHTML =""
 //gets rid of <select>
 document.getElementById("unitBox").innerHTML="";
 }

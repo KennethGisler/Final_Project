@@ -2,7 +2,10 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="header :: headArmy"></head>
 <style>
-</style>
+    .indexBody{
+      background-color: black;
+    }
+  </style>
 <body>
   <nav th:replace="header :: nav"></nav>
 <h1>Build your Army</h1>
@@ -20,24 +23,31 @@
 <fieldset>
 	<div th:object="${newUnit}" th:action="newUnit" method="get">
 		<!--Unit Box; where the units populate.-->
-	<div class="col-lg-1">
-	<div class="form-group" style="float:left">
-	<table>
-		<span id="unitBox"></span>
+	<table class="table table-striped table-bordered">
+		<thead>
+			<tr>
+			<th>Unit Type</th>
+			<th colspan="1">First Selection</th>
+			<th colspan="1">Second Selection</th>
+			<th colspan="1">Third Selection</th>
+			<th colspan="1">Fourth Selection</th>
+			<th colspan="1">Fifth Selection</th>
+			<th colspan="1">Sixth Selection</th>
+			</tr>
+		</thead>
+		<tr id="HQBox"></tr>
+		<tr id="TroopBox"></tr>
+		<tr id="EliteBox"></tr>
+		<tr id="FastBox"></tr>
+		<tr id="HeavyBox"></tr>
+		<tr id="LowBox"></tr>
+		<tr id="TransportBox"></tr>
+		<tr id="flyerBox"></tr>
+		<!--<tr id="fortnBox"></tr>-->
 		<span id="error"></span>
 	</table>
-		</div>
-	</div>
 	</div> 
-<table>
-<!--Row per Unit -->
-<tr>
-<th>U1</th>
-<th>U2</th>
-</tr>
 
-
-</table>
 </fieldset>
 		<input class="btn btn-dark" name="submit" type ="submit" value="Create Army" />
 </form>

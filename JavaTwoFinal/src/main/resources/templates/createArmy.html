@@ -1,29 +1,50 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="header :: headArmy"></head>
+<style>
+</style>
 <body>
   <nav th:replace="header :: nav"></nav>
 <h1>Build your Army</h1>
 
 <!-- Form for the Army Name/Faction and Points-->
-<form form th:object="${newArmy}" th:action="newArmy" method="get" >
+<form th:object="${newArmy}" th:action="newArmy" method="get" >
 		<h3>Army Name: <input name="armyName" type="text"></h3>
 <fieldset>
+<div class="col-lg-6">
 		Factions: <select name="factionName" id="factionName" onchange="chooseUnitsToList()">
 					<script>loadFactions();</script>
 				  </select>
+</div>
 </fieldset>
 <fieldset>
 	<div th:object="${newUnit}" th:action="newUnit" method="get">
 		<!--Unit Box; where the units populate.-->
+	<div class="col-lg-1">
+	<div class="form-group" style="float:left">
+	<table>
 		<span id="unitBox"></span>
 		<span id="error"></span>
+	</table>
+		</div>
+	</div>
 	</div> 
+<table>
+<!--Row per Unit -->
+<tr>
+<th>U1</th>
+<th>U2</th>
+</tr>
+
+
+</table>
 </fieldset>
-		<input name="submit" type ="submit" value="Create Army" />
+		<input class="btn btn-dark" name="submit" type ="submit" value="Create Army" />
 </form>
 <form action="navPage" method= post >
-	<input type="submit" name="submit" value="Return to Menu" />
+	<input class="btn btn-dark" type="submit" name="submit" value="Return to Menu" />
 </form>
 </body>
+<footer th:replace="header :: footer">
+</footer>
 </html>

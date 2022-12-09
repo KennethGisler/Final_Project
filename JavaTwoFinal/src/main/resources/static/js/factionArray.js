@@ -31,7 +31,7 @@ document.getElementById("unitBox").innerHTML =
 /*2*/"<select id ="+"hq2 "+"name="+"hq.hq2"+"></select> "+
 "  <select id ="+"hqCost2 "+"name="+"hq.hqCost2"+" hidden></select>"+
 /*3*/"<select id ="+"hq3 "+"name="+"hq.hq3"+"></select> "+
-"  <select id ="+"hqCost3 "+"name="+"hq.hqCost3"+" hidden></select></br></br>"+
+"  <select id ="+"hqCost3 "+"name="+"hq.hqCost3"+" hidden></select></br>"+
 //TROOP SELECT
 "Select troops: <select id ="+"troops1 "+"name="+"troops.troop1"+"></select>"+
 "  <select id ="+"tCost1 "+"name="+"troops.tCost1"+" hidden></select>"+
@@ -44,7 +44,7 @@ document.getElementById("unitBox").innerHTML =
 /*5*/"<select id ="+"troops5 "+"name="+"troops.troop5"+"></select>"+
 "  <select id ="+"tCost5 "+"name="+"troops.tCost5"+" hidden></select>"+
 /*6*/"<select id ="+"troops6 "+"name="+"troops.troop6"+"></select>"+
-"  <select id ="+"tCost6 "+"name="+"troops.tCost6"+" hidden></select></br></br>"+
+"  <select id ="+"tCost6 "+"name="+"troops.tCost6"+" hidden></select></br>"+
 //ELITE SELECT
 "Select elites: <select id ="+"elites1 "+"name="+"e.elite1"+"></select>"+
 "  <select id ="+"eCost1 "+"name="+"e.eCost1"+" hidden></select>"+
@@ -57,21 +57,21 @@ document.getElementById("unitBox").innerHTML =
 /*5*/"<select id ="+"elites5 "+"name="+"e.elite5"+"></select>"+
 "  <select id ="+"eCost5 "+"name="+"e.eCost5"+" hidden></select>"+
 /*6*/"<select id ="+"elites6 "+"name="+"e.elite6"+"></select>"+
-"  <select id ="+"eCost6 "+"name="+"e.eCost6"+" hidden></select></br></br>"+
+"  <select id ="+"eCost6 "+"name="+"e.eCost6"+" hidden></select></br>"+
 //FAST ATTACK
 /*1*/"Select fastattack: <select id ="+"fastattack1 "+"name="+"fa.fa1"+"></select>"+
 "  <select id ="+"faCost1 "+"name="+"fa.faCost1"+" hidden></select>"+
 /*2*/"<select id ="+"fastattack2 "+"name="+"fa.fa2"+"></select>"+
 "  <select id ="+"faCost2 "+"name="+"fa.faCost2"+" hidden></select>"+
 /*3*/"<select id ="+"fastattack3 "+"name="+"fa.fa3"+"></select>"+
-"  <select id ="+"faCost3 "+"name="+"fa.faCost3"+" hidden></select></br></br>"+
+"  <select id ="+"faCost3 "+"name="+"fa.faCost3"+" hidden></select></br>"+
 //HEAVY
 /*1*/"Select heavysupport: <select id ="+"heavysupport1 "+"name="+"hs.hs1"+"></select>"+
 "  <select id ="+"hsCost1 "+"name="+"hs.hsCost1"+" hidden></select>"+
 /*2*/"<select id ="+"heavysupport2 "+"name="+"hs.hs2"+"></select>"+
 "  <select id ="+"hsCost2 "+"name="+"hs.hsCost2"+" hidden></select>"+
 /*3*/"<select id ="+"heavysupport3 "+"name="+"hs.hs3"+"></select>"+
-"  <select id ="+"hsCost3 "+"name="+"hs.hsCost3"+" hidden></select></br></br>"+
+"  <select id ="+"hsCost3 "+"name="+"hs.hsCost3"+" hidden></select></br>"+
 //LoW
 /*1*/"Select lordofwar: <select id ="+"lordofwar1 "+"name="+"low.low1"+"></select>"+
 "  <select id ="+"lowCost1 "+"name="+"low.lowCost1"+" hidden></select>"+
@@ -82,9 +82,9 @@ document.getElementById("unitBox").innerHTML =
 /*4*/"<select id ="+"lordofwar4 "+"name="+"low.low4"+"></select>"+
 "  <select id ="+"lowCost4 "+"name="+"low.lowCost4"+" hidden></select>"+
 /*5*/"<select id ="+"lordofwar5 "+"name="+"low.low5"+"></select>"+
-"  <select id ="+"lowCost5 "+"name="+"low.lowCost5"+" hidden></select></br></br>"+
+"  <select id ="+"lowCost5 "+"name="+"low.lowCost5"+" hidden></select></br>"+
 //Transport
-/*1*/"Select transport: <select id ="+"transport1 "+"name="+"dt.dt1"+"></select>"+
+/*1*/"Select transport: </br> <select id ="+"transport1 "+"name="+"dt.dt1"+"></select>"+
 "  <select id ="+"dtCost1 "+"name="+"dt.tdCost1"+" hidden></select>"+
 /*2*/"<select id ="+"transport2 "+"name="+"dt.dt2"+"></select>"+
 "  <select id ="+"dtCost2 "+"name="+"dt.tdCost2"+" hidden></select>"+
@@ -95,7 +95,7 @@ document.getElementById("unitBox").innerHTML =
 /*5*/"<select id ="+"transport5 "+"name="+"dt.dt5"+"></select>"+
 "  <select id ="+"dtCost5 "+"name="+"dt.tdCost5"+" hidden></select>"+
 /*6*/"<select id ="+"transport6 "+"name="+"dt.dt6"+"></select>"+
-"  <select id ="+"dtCost6 "+"name="+"dt.tdCost6"+" hidden></select></br></br>"+
+"  <select id ="+"dtCost6 "+"name="+"dt.tdCost6"+" hidden></select></br>"+
 //Flyer
 /*1*/"Select flyer: <select id ="+"flyer1 "+"name="+"fl.flyer1"+"></select>"+
 "  <select id ="+"flCost1 "+"name="+"fl.flCost1"+" hidden></select>"+

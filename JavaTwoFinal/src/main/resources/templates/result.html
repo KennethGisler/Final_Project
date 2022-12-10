@@ -15,13 +15,16 @@ table, th, td {
  <td th:text= "${currentUser.id}" type="hidden"/>
  <td th:text= "${currentUser.userName}" />
  <td th:text= "${currentUser.userPassword}" />
- <td th:text= "${currentUser.usersArmies}" />
-	<!--<tr th:each="currentArmy : ${currentUser.usersArmies}">
-		<td th:text= "${currentArmy.armyName}" />
-	</tr>
- </tr> -->
+
 </table>
 
+<table>
+ <tr th:each="currentArmy : ${armies}">
+		<td th:text="${currentArmy.armyName}" />
+		<td th:text="${currentArmy.pointsTotal}" />
+		<td th:text="${currentArmy.factionName}" />
+ </tr> 
+</table>
 
 
 </form>

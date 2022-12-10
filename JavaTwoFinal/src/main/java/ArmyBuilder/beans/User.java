@@ -46,4 +46,7 @@ public class User {
 		this.userName = userName;
 		this.userPassword = userPassword;
 	}
+	
+	//function
+	
 }

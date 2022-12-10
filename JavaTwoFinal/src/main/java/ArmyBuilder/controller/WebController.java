@@ -77,17 +77,25 @@ public class WebController {
 	
 	@GetMapping("/newArmy") //adds an army!						//For same page input
 	public String createArmy(@ModelAttribute Army a, @ModelAttribute Unit un, Model model) {
-		//List<User> u = repo.findAll();
+		
 		User test = repo.getById(currentUser); //this finds the signed in user and adds the items to that user; (may want a catch but we should never have an ID that doesn't exist
 		List<Unit> temp = new ArrayList<Unit>();
+		System.out.println("GOT HERE 0");
 		a.setRoster(temp);
+		System.out.println("GOt HERE 1! " + a.toString());
+		unitRepo.delete(un);
+		System.out.println("GOT HERE 2! " + un.toString());
 		unitRepo.save(un); //same page input
 		a.getRoster().add(un);
+		System.out.println("ADDED UN TO A! " + a.toString() );
 		a.setPointsTotal(un.getTotal());
+		System.out.println("Set a value!" + a.toString());
 		armyRepo.save(a);
+		System.out.println("Saved a? + " + a.toString());
 		test.getUsersArmies().add(a);
+		System.out.println("Added a to user?");
 		repo.save(test);
-		
+		System.out.println("saved user");
 		return "navPage";
 	}
 	//return to menu fix
@@ -100,9 +108,6 @@ public class WebController {
 		if(repo.findAll().isEmpty()) {
 			return createUser(model);
 		}else {
-			for(User u : repo.findAll()) {
-				System.out.println(u.toString());
-			}
 			model.addAttribute("users", repo.findAll());
 			return "result";
 		}
@@ -140,21 +145,84 @@ public class WebController {
 	
 	@PostMapping("/viewMyUser")
 	public String viewMyUser(Model model) {
-		List<User> temp = new ArrayList<User>(); 
+		List<User> temp = new ArrayList<User>();
+		List<Army> test = new ArrayList<Army>();
  		if(repo.findAll().isEmpty()) {
 			return createUser(model);
 		}else {
 			for(User u : repo.findAll()) {
 				if(u.getId() == currentUser) {
 					temp.add(u);
+					System.out.println(temp);
+					test = u.getUsersArmies();
+					System.out.println(test);
 				}
 			}
 			model.addAttribute("users", temp);
+			model.addAttribute("armies",test);
 			return "result";
 		}
 		
 		//return "result";
 	}
 	
+	@GetMapping("/deleteArmy/{id}") //deletes an army
+	public String deleteArmy(@PathVariable("id") long id, Model model) {
+		
+		Army a = armyRepo.getById(id); //gets the army that the id belongs to
+		User u = repo.findById(currentUser).orElse(null); //get's the current user
+		ArrayList<Long> unitIds = new ArrayList<Long>(); //for all of the army id's
+		
+		if(u.getUsersArmies().contains(a)) { //sees if the army is in that uses list
+			u.getUsersArmies().remove(a); //removes it from their list
+			
+			for(Unit un : a.getRoster()) {
+				unitIds.add(un.getId());
+			}
+			a.setRoster(null);
+			for(long unitId : unitIds) {
+				Unit temp = unitRepo.getById(unitId);
+				unitRepo.delete(temp);
+			}
+			
+			armyRepo.delete(a); //delets the entity in the repo
+		}else {
+			System.out.println("You do not own this army, so you can't delete it!"); //if it's not in your list it spits this out
+		}
+		return "navPage";
+	} 
 
+	@GetMapping("/editArmy/{id}") //edit an army
+	public String editArmy(@PathVariable("id") long id, Model model) {
+		
+		Army a = armyRepo.getById(id); //gets the army that the id belongs to
+		User u = repo.findById(currentUser).orElse(null); //get's the current user
+		Unit un; //sets up a unit
+		
+		if(u.getUsersArmies().contains(a)) { //sees if the army is in that uses list
+			
+				if(a.getRoster().isEmpty()) {//sees if the Army's list is empty
+					un = new Unit(); //defaults to a normal Army
+				}else {
+					un = a.getRoster().get(0);
+				}
+				
+			System.out.println("!!!!! " + un.toString() + " !!!!");
+			System.out.println("!!!!! " + a.toString() + " !!!!");
+			
+			model.addAttribute("newUnit",un);
+		    model.addAttribute("newArmy",a);
+		    
+			return "createArmy";
+		}else {
+			System.out.println("You do not own this army, so you can't edit it!"); //if it's not in your list it spits this out
+			return viewAllInfo(model);
+		}
+		
+	}
+	
+	@GetMapping("/navPage")
+	public String navPage2(Model model) {
+		return("navPage");
+	}
 }

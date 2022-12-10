@@ -1,3 +1,8 @@
+/**
+ * Kenneth Gisler - kgisler@dmacc.edu
+ * CIS171 22149
+ * Nov 11, 2022
+ */
 package ArmyBuilder.beans;
 
 import java.util.List;

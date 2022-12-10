@@ -20,16 +20,10 @@
 <td th:text="${currentArmy.factionName}"/>
 <td th:text="${currentArmy.pointsTotal}"/>
 <td>
-  Controller needs made. HTML that has Units needs made.
-<form action="newArmy" method="post">
-  <input type="submit" name="submit" value="Edit?" />
-</form>
+  <a th:href="@{/editArmy/{id}(id=${currentArmy.id})}" > Edit </a>
 </td>
 <td>
-  Controller needs made.
-  <form action="newArmy" method="post">
-    <input type="submit" name="submit" value="Delete?" />
-  </form>
+   <a th:href="@{/deleteArmy/{id}(id=${currentArmy.id})}" > Delete</a>
   </td>
 </tr>
 
@@ -138,5 +132,11 @@
 
 
 </table>
+<form action="navPage" method= post >
+	<input type="submit" name="submit" value="post!" />
+</form>
+<form action="navPage" method= get >
+	<input type="submit" name="submit" value="get!" />
+</form>
 </body>
 </html>

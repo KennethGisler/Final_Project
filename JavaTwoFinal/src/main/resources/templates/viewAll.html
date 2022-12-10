@@ -4,7 +4,7 @@
 <body>
   <nav th:replace="header :: nav"></nav>
 
-<table class="table">
+<table class="table table-striped table-bordered">
 <thead>
 <tr>
 <th>Name of Army</th>
@@ -30,67 +30,28 @@
 
 </tbody>
 </table>
-</br>
-<table class="table">
-<thead>
-<tr>
-<!--HQ-->
-<th>HQ1</th>
-<th>COST</th>
-<th>HQ2</th>
-<th>COST</th>
-<th>HQ3</th>
-<th>COST</th>
-<!--Elite-->
-<th>Elite1</th>
-<th>Cost</th>
-<th>Elite2</th>
-<th>Cost</th>
-<th>Elite3</th>
-<th>Cost</th>
-<th>Elite4</th>
-<th>Cost</th>
-<th>Elite5</th>
-<th>Cost</th>
-<th>Elite6</th>
-<th>Cost</th>
-<!--Fast Attack-->
-<th>FA1</th>
-<th>Cost</th>
-<!--Heavy Support-->
-<th>HS1</th>
-<th>Cost</th>
-<!--Lord of War-->
-<th>LOW1</th>
-<th>Cost</th>
-<!--Transport-->
-<th>DT1</th>
-<th>Cost</th>
-<!--Troop-->
-<th>TROOP1</th>
-<th>Cost</th>
-<th>TROOP2</th>
-<th>Cost</th>
-<th>TROOP3</th>
-<th>Cost</th>
-<th>TROOP4</th>
-<th>Cost</th>
-<th>TROOP5</th>
-<th>Cost</th>
-<th>TROOP6</th>
-<th>Cost</th>
 
+<table class="table table-striped table-bordered" th:each="currentUnits : ${units}">
+<tr>
+<th>Unit Type</th>
+<th colspan="1">First Selection</th><th>Cost</th>
+<th colspan="1">Second Selection</th><th>Cost</th>
+<th colspan="1">Third Selection</th><th>Cost</th>
+<th colspan="1">Fourth Selection</th><th>Cost</th>
+<th colspan="1">Fifth Selection</th><th>Cost</th>
+<th colspan="1">Sixth Selection</th><th>Cost</th>
 </tr>
-</thead>
-<tr th:each="currentUnits : ${units}">
-  <!--HQ-->
+<tr>
+<td>HQ</td>
 <td th:text="${currentUnits.hq.hq1}"/>
 <td th:text="${currentUnits.hq.hqCost1}"/>
 <td th:text="${currentUnits.hq.hq2}"/>
 <td th:text="${currentUnits.hq.hqCost2}"/>
 <td th:text="${currentUnits.hq.hq3}"/>
 <td th:text="${currentUnits.hq.hqCost3}"/>
-<!--Elite-->
+</tr>
+<tr>
+<td>Elite</td>
 <td th:text="${currentUnits.e.elite1}"/>
 <td th:text="${currentUnits.e.eCost1}"/>
 <td th:text="${currentUnits.e.elite2}"/>
@@ -103,19 +64,55 @@
 <td th:text="${currentUnits.e.eCost5}"/>
 <td th:text="${currentUnits.e.elite6}"/>
 <td th:text="${currentUnits.e.eCost6}"/>
-<!--Fast Attack-->
+</tr>
+<tr>
+<td>Fast Attack</td>
 <td th:text="${currentUnits.fa.fa1}"/>
 <td th:text="${currentUnits.fa.faCost1}"/>
-<!--Heavy Support-->
+<td th:text="${currentUnits.fa.fa2}"/>
+<td th:text="${currentUnits.fa.faCost2}"/>
+<td th:text="${currentUnits.fa.fa3}"/>
+<td th:text="${currentUnits.fa.faCost3}"/>
+</tr>
+<tr>
+<td>Heavy Support</td>
 <td th:text="${currentUnits.hs.hs1}"/>
 <td th:text="${currentUnits.hs.hsCost1}"/>
-<!--Lord of War-->
+<td th:text="${currentUnits.hs.hs2}"/>
+<td th:text="${currentUnits.hs.hsCost2}"/>
+<td th:text="${currentUnits.hs.hs3}"/>
+<td th:text="${currentUnits.hs.hsCost3}"/>
+</tr>
+<tr>
+<td>Lord of War</td>
 <td th:text="${currentUnits.low.low1}"/>
 <td th:text="${currentUnits.low.lowCost1}"/>
-
+<td th:text="${currentUnits.low.low2}"/>
+<td th:text="${currentUnits.low.lowCost2}"/>
+<td th:text="${currentUnits.low.low3}"/>
+<td th:text="${currentUnits.low.lowCost3}"/>
+<td th:text="${currentUnits.low.low4}"/>
+<td th:text="${currentUnits.low.lowCost4}"/>
+<td th:text="${currentUnits.low.low5}"/>
+<td th:text="${currentUnits.low.lowCost5}"/>
+</tr>
+<tr>
+<td>Dedicated Transport</td>
 <td th:text="${currentUnits.dt.dt1}"/>
 <td th:text="${currentUnits.dt.tdCost1}"/>
-
+<td th:text="${currentUnits.dt.dt2}"/>
+<td th:text="${currentUnits.dt.tdCost2}"/>
+<td th:text="${currentUnits.dt.dt3}"/>
+<td th:text="${currentUnits.dt.tdCost3}"/>
+<td th:text="${currentUnits.dt.dt4}"/>
+<td th:text="${currentUnits.dt.tdCost4}"/>
+<td th:text="${currentUnits.dt.dt5}"/>
+<td th:text="${currentUnits.dt.tdCost5}"/>
+<td th:text="${currentUnits.dt.dt6}"/>
+<td th:text="${currentUnits.dt.tdCost6}"/>
+</tr>
+<tr>
+<td>Troops</td>
 <td th:text="${currentUnits.troops.troop1}"/>
 <td th:text="${currentUnits.troops.tCost1}"/>
 <td th:text="${currentUnits.troops.troop2}"/>
@@ -128,8 +125,15 @@
 <td th:text="${currentUnits.troops.tCost5}"/>
 <td th:text="${currentUnits.troops.troop6}"/>
 <td th:text="${currentUnits.troops.tCost6}"/>
+</tr>
+<tr>
+<td>Flyer</td>
+<td th:text="${currentUnits.fl.flyer1}"/>
+<td th:text="${currentUnits.fl.flCost1}"/>
+<td th:text="${currentUnits.fl.flyer2}"/>
+<td th:text="${currentUnits.fl.flCost2}"/>
 
-
+</tr>
 
 </table>
 <form action="navPage" method= post >

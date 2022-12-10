@@ -1,29 +1,61 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="header :: headArmy"></head>
+<style>
+    .indexBody{
+      background-color: black;
+    }
+  </style>
 <body>
   <nav th:replace="header :: nav"></nav>
-<h1>Build your Army</h1>
+<h1 class="w-100 p-4 d-flex justify-content-center pb-4">Build your Army</h1>
 
 <!-- Form for the Army Name/Faction and Points-->
-<form form th:object="${newArmy}" th:action="newArmy" method="get" >
-		<h3>Army Name: <input name="armyName" type="text"></h3>
-<fieldset>
-		Factions: <select name="factionName" id="factionName" onchange="chooseUnitsToList()">
+
+<form class="form-group" th:object="${newArmy}" th:action="newArmy" method="get" >
+		Army Name: <input name="armyName" class="custom-select-lg" type="text"></br>
+
+		Factions: <select name="factionName" id="factionName" class="custom-select custom-select-lg" onchange="chooseUnitsToList()">
 					<script>loadFactions();</script>
 				  </select>
-</fieldset>
+</br>
+
+
 <fieldset>
 	<div th:object="${newUnit}" th:action="newUnit" method="get">
 		<!--Unit Box; where the units populate.-->
-		<span id="unitBox"></span>
+	<table class="table table-striped table-bordered">
+		<thead>
+			<tr>
+			<th>Unit Type</th>
+			<th colspan="1">First Selection,Cost</th>
+			<th colspan="1">Second Selection,Cost</th>
+			<th colspan="1">Third Selection,Cost</th>
+			<th colspan="1">Fourth Selection,Cost</th>
+			<th colspan="1">Fifth Selection,Cost</th>
+			<th colspan="1">Sixth Selection,Cost</th>
+			</tr>
+		</thead>
+		<tr id="HQBox"></tr>
+		<tr id="TroopBox"></tr>
+		<tr id="EliteBox"></tr>
+		<tr id="FastBox"></tr>
+		<tr id="HeavyBox"></tr>
+		<tr id="LowBox"></tr>
+		<tr id="TransportBox"></tr>
+		<tr id="flyerBox"></tr>
+		<!--<tr id="fortnBox"></tr>-->
 		<span id="error"></span>
+	</table>
 	</div> 
+
 </fieldset>
-		<input name="submit" type ="submit" value="Create Army" />
+		<input class="btn btn-dark" name="submit" type ="submit" value="Create Army" />
 </form>
 <form action="navPage" method= post >
-	<input type="submit" name="submit" value="Return to Menu" />
+	<input class="btn btn-dark" type="submit" name="submit" value="Return to Menu" />
 </form>
 </body>
+<footer th:replace="header :: footer">
+</footer>
 </html>

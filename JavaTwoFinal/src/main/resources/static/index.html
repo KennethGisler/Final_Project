@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="header :: headNorm"></head>
+
+<head th:replace="header :: headNorm">
+
+</head>
   <!--Boring Stuff-->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -20,25 +23,31 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Exo:wght@700&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+  <style>
+    .indexBody{
+      background-color:#515151;
+      color: white;
+      
+    }
+    .nav-item{
+      list-style: none;
+    }
+  </style>
 </head>
 <nav th:replace="header :: nav"></nav>
-<body style="background-color:#0000;">
+<body class="indexBody">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="#"><h1>Welcome to 40k army builder!</h1></a>
 
-
+<a class="navbar-brand" href="#"><h1>Welcome to 40k army builder!</h1></a>
+		<!-- Welcome and Login Button the div is a quick fix. -->
       <div class="collapse navbar-collapse">
-        <ul class="navbar-nav mr-auto">
-
-          <li class="nav-item">
-            <form class="nav-link" action="login" method="get">
-              <input name="submit" type="submit" value="Click here to Login" /> 
+      </div>
+            <li class="nav-item">
+            	<form class="nav-link" action="login" method="get">
+              	<input class="btn btn-dark" name="submit" type="submit" value="Click here to Login" /> 
             </form>
             </li>
-
-        </ul>
-      </div>
     </div>
   </nav>
 

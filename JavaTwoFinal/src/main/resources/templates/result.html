@@ -23,12 +23,12 @@ table, th, td {
 		<td th:text="${currentArmy.armyName}" />
 		<td th:text="${currentArmy.pointsTotal}" />
 		<td th:text="${currentArmy.factionName}" />
+		<a th:href="@{/deleteArmy/{id}(id=${currentArmy.id})}" > Delete</a>
  </tr> 
 </table>
 
 
 </form>
 
-</body>
 
 </html>

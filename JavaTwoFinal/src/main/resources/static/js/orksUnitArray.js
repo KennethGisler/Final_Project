@@ -3,56 +3,81 @@
 const orkHQ =[
     ["Beastboss on Squigosaur",8],
     ["Beastboss",5],
-    ["Big Mek in Mega Armour",3]
+    ["Big Mek in Mega Armour",3],
+    ["Big Mek with Shokk Attack Gun",4],
+    ["Boss Snikrot",4],
+    ["Boss Zagstruk",5],
+    ["Kaptin Badrukk",5],
+    ["War Boss", 2],
+    ["Weirdboy",3],
+    ["None",0]
 ]; 
 
 const orkTroops =[
     ["Beast Snagga Boyz",5],
     ["Boyz", 5],
-    ["Gretchin",2]
+    ["Gretchin",2],
+    ["None",0]
 ];
 
 
 const orkElites = [    
     ["Burna Boyz",3],
     ["Kommandos", 4],
-    ["Mad Dok Grotsni",5]
+    ["Mad Dok Grotsni",5],
+    ["Mek",2],
+    ["Meganobz",6],
+    ["Nobz",7],
+    ["Nobz On Warbikes",7],
+    ["Painboy",3],
+    ["Runtherd",2],
+    ["Tankbustas",4],
+    ["None",0]
 ];
 
 
 const orkFastAttack = [    
     ["Boomdakka Snazzwagons",5],
+    ["Deffkoptas",8],
     ["Kustom Boosta-blasta", 4],
-    ["Deffkoptas",8]
+    ["Stormboyz",3],
+    ["Warbikers",4],
+    ["None",0]
 ];
 
 
-const orkHeavySupport =[    
+const orkHeavySupport =[
+	["Battlewagon",8],    
     ["Bonebreaka",10],
+    ["Deff Dreads",5],
+    ["Flash Gitz",7],
     ["Gunwagon", 10],
-    ["Kill Rig",10]
+    ["Killa Kans",2],
+    ["Kill Rig",10],
+    ["Lootas",4],
+    ["Mek Gunz",2],
+    ["None",0]
 ];
 
 
 const orkLordOfWar = [    
     ["Stompa",34],
     ["Gorkanaut", 19],
-    ["Morkanaut",19]
+    ["Morkanaut",19],
+    ["None",0]
 ];
 
 const orkTransport = [    
-    ["Trukk",4]
+    ["Trukk",4],
+    ["None",0]
 ];
 
 const orkFlyer = [    
     ["Blitza-bommer ",8],
-    ["Burna-bommer", 9]
-];
-
-
-const orkFortification = [    
-    ["Big'Ed Bossunka",5],
-    ["Mekboy Worksho", 4]
+    ["Burna-bommer", 9],
+    ["Dakkajet",7],
+    ["Wazbom Blastajet",8],
+    ["None",0]
 ];
 
 function fillOrk(){
@@ -99,8 +124,7 @@ function fillOrk(){
     //Flyer
     const flyer = document.getElementById("flyer1");
     const flyer2 = document.getElementById("flyer2");
-    //Fort
-    //const fortification = document.getElementById("fortification1");
+
     //Do you like FOR LOOOOOPS?
 
     //reads the array
@@ -358,14 +382,6 @@ function fillOrk(){
         opt.innerHTML = a;
         flyer2.appendChild(opt);
     }
-    //Fortification
-    /*1for (const [index,a] of orkFortification.entries()){
-        const opt = document.createElement('option');
-        opt.id = "fortification";
-        opt.value = [a.slice(0,-1)];
-        opt.innerHTML = a;
-        fortification.appendChild(opt);
-    }*/
 
 fillorkCost();
 }
@@ -417,9 +433,6 @@ function fillorkCost(){
    const flyer = document.getElementById("flCost1");
    const flyer2 = document.getElementById("flCost2");
 
-    //fort Disabled because error
-   //const fortification = document.getElementById("ftCost1");
-   //Do you like FOR LOOOOOPS?
 
    //HQ
    for (const [index,a] of orkHQ.entries()){
@@ -787,17 +800,7 @@ document.getElementById('flyer1').addEventListener("change", function () {
 document.getElementById('flyer2').addEventListener("change", function () {
     document.getElementById('flCost2').selectedIndex = document.getElementById('flyer2').selectedIndex;
 }, false);
-//Fort
-/*1for (const [index,a] of orkFortification.entries()){
-    const opt = document.createElement('option');
-    opt.id = "fortification";
-    opt.value = orkFortification[index][1];
-    opt.innerText = orkFortification[index][1];
-    fortification.appendChild(opt);
-}*/
-/*document.getElementById('fortification1').addEventListener("change", function () {
-    document.getElementById('ftCost1').selectedIndex = document.getElementById('fortification1').selectedIndex;
-}, false);*/
+
 
 
 }

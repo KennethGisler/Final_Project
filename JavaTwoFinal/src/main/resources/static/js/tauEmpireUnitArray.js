@@ -1,58 +1,69 @@
 const tauHQ=[
+	["Aun'Shi",5],
+	["Aun'Va",4],
     ["Cadre Fireblade", 3],
+    ["Commander in Coldstar Battlesuit",7],
+    ["Commander in Crisis Battlesuit",7],
+    ["Commander in Enforcer Battlesuit",8],
     ["Commander Farsight", 7],
-    ["Darkstrider", 3]
+    ["Commander Shadowsun",8],
+    ["Darkstrider", 3],
+    ["Ethereal",3],
+    ["Kroot Shaper",2],
+    ["Longstrike",9],
+    ["None",0]
 ];
 const tauTroops = [
     ["Breacher Team",5],
     ["Kroot Carnivores",3],
-    ["Strike Team", 4]
+    ["Strike Team", 4],
+    ["None",0]
 ];
 
 const tauElites = [
-    ["Kroot Shaper",2],
+    ["Crisis Battlesuits",9],
+    ["Crisis Boddyguards",6],
+    ["Firesight Marksman",3],
+    ["Ghostkeel Battlesuit",9],
     ["Krootox Riders",2],
     ["Stealth Battlesuits",2],
-    ["Test",999]
+    ["Tactical Drones",2],
+    ["None",0]
 ];
 
 const tauFastAttack = [
 ["Kroot Hounds",1],
 ["Pathfinder Team",5],
 ["Piranhas",4],
+["Vespid Stingwings",3],
+["None",0]
 ];
 
 const tauHeavySupport = [
 ["Broadside Battlesuits",5],
 ["Hammerhead Gunship",8],
 ["Riptide Battlesuit",13],
+["Sky Ray Gunship",7],
+["None",0]
 ];
 
 const tauLordOfWar = [
     ["Stormsurge",17],
-    ["Test",999]
+    ["None",0]
 ];
 
 
 const tauTransport = [
     ["Devil Fish",6],
-    ["Test",999]
+    ["None",0]
 ];
 
 
 const tauFlyer = [
     ["Razorshark Strike Figher", 8],
-    ["Sun Shark Bomber",9]
-
+    ["Sun Shark Bomber",9],
+	["None",0]
 ];
-
-
-const tauFortification =[
-    ["Tidewell Droneport",6],
-    ["Tidewall Gunrig",4],
-    ["Tidewall Shieldline",7]
-];
-
 
 function fillTau(){
     //this selects the <select id = "unitDisplayer">
@@ -98,8 +109,7 @@ function fillTau(){
     //Flyer
     const flyer = document.getElementById("flyer1");
     const flyer2 = document.getElementById("flyer2");
-    //Fort
-   // const fortification = document.getElementById("fortification1");
+
     //Do you like FOR LOOOOOPS?
 
     //reads the array
@@ -357,14 +367,7 @@ function fillTau(){
         opt.innerHTML = a;
         flyer2.appendChild(opt);
     }
-    //Fortification
-    /*1xfor (const [index,a] of tauFortification.entries()){
-        const opt = document.createElement('option');
-        opt.id = "fortification";
-        opt.value = [a.slice(0,-1)];
-        opt.innerHTML = a;
-        fortification.appendChild(opt);
-    }*/
+   
 fillTauCost();
 }
 
@@ -414,8 +417,6 @@ function fillTauCost(){
     //flyer
    const flyer = document.getElementById("flCost1");
    const flyer2 = document.getElementById("flCost1");
-    //fort
-   //const fortification = document.getElementById("ftCost1");
    //Do you like FOR LOOOOOPS?
 
    //HQ
@@ -785,16 +786,5 @@ document.getElementById('flyer1').addEventListener("change", function () {
 document.getElementById('flyer2').addEventListener("change", function () {
     document.getElementById('flCost2').selectedIndex = document.getElementById('flyer2').selectedIndex;
 }, false);
-//Fort
-/*1 or (const [index,a] of tauFortification.entries()){
-    const opt = document.createElement('option');
-    opt.id = "fortification";
-    opt.value = tauFortification[index][1];
-    opt.innerText = tauFortification[index][1];
-    fortification.appendChild(opt);
-}*/
-/*document.getElementById('fortification1').addEventListener("change", function () {
-    document.getElementById('ftCost1').selectedIndex = document.getElementById('fortification1').selectedIndex;
-}, false);*/
 
 }

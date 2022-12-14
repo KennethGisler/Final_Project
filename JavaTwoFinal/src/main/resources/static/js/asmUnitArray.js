@@ -1,59 +1,93 @@
 
 const asmHQ =[
-    ["Colonel 'Iron Hand' Straken",4],
-    ["Commissar Yarrik",6],
-    ["Company Commander",2]
+	["Colonel 'Iron Hand' Straken",4],
+	["Commissar Yarrik",6],
+    ["Company Commander",2], 
+	["Lord Castellan Creed", 4],
+    ["Lord Commisar",4],
+    ["Primaris Psyker",2],
+    ["Tank Commander",12],
+    ["Tempestor Prime",3],
+    ["Knight Commander Pask",13],
+    ["None", 0]
 ]; 
 
 const asmTroops =[
     ["Conscripts",5],
     ["Infantry Squad", 3],
-    ["Militarum Tempestus Scion",3]
+    ["Militarum Tempestus Scion",3],
+    ["None", 0]
 ];
 
 
-const asmElites = [    
-    ["Astropath", 2],
+const asmElites = [   
+	["Astropath", 2],
     ["Bullgryns", 5],
-    ["Colour Sergeant Kell ", 3]
+    ["Colour Sergeant Kell ", 3],
+    ["Commissars",2],
+    ["Crusaders",2],
+	["Master Of Ordnance", 2],
+    ["Militarum Tempestus Command Squad",3],
+    ["Ministorun Priest",2],
+    ["Nork Deddog",4],
+    ["Officer Of the Fleet",2],
+    ["Ogryn Bodyguards",4],
+    ["Ogryns",5],
+    ["Platoon Commander",2],
+    ["Ratlings",2], 
+    ["Sergant Harker",3],
+    ["Servitors",3],
+	["Special Weapons Squad",2],
+	["Tech Priest Enginseer",2],
+    ["Veterans",5],
+    ["Wyrdvane Psykers",1],
+    ["None", 0]
 ];
 
 
 const asmFastAttack = [    
     ["Armoured Sentinels",3],
     ["Hellhounds", 6],
-    ["Scout Sentinels",3]
+    ["Scout Sentinels",3],
+    ["None", 0]
 ];
 
 
-const asmHeavySupport =[    
-    ["Basilisks",7],
-    ["Deathstrike", 8],
-    ["Heavy Weapons Squad",3]
+const asmHeavySupport =[  
+	["Basilisks",7],
+	["Deathstrike", 9],
+	["Heavy Weapons Squad",3], 
+	["Hydras",7], 
+	["Leman Russ Battle Tanks",10],
+    ["Manticore",8],
+    ["Wyverns",6],
+    ["None", 0]
 ];
 
 
 const asmLordOfWar = [    
     ["Baneblade", 30],
     ["Banehammer", 29],
-    ["Banesword ", 29]
+    ["Banesword ", 29],
+    ["Doomhammer",27],
+    ["Hellhammer",30],
+    ["Shadowsword",26],
+    ["Stormlord",26],
+    ["Stormsword",26],
+    ["None", 0]
 ];
 
 const asmTransport = [    
     ["Chimera",4],
     ["Taurox Prime",7],
-    ["Taurox",5]
+    ["Taurox",5],
+    ["None", 0]
 ];
 
 const asmFlyer = [    
     ["Valkyries ",7],
-    ["Burna-bommer", 9]
+    ["None", 0]
 ];
-
-//No Fortifications
-const asmFortification = ["Test", 1];
-
-
 
 function fillAsm(){
     //this selects the <select id = "unitDisplayer">
@@ -99,10 +133,6 @@ function fillAsm(){
     //Flyer
     const flyer = document.getElementById("flyer1");
     const flyer2 = document.getElementById("flyer2");
-    //Fort
-  // const fortification = document.getElementById("fortification1");
-    //const fortification2 = document.getElementById("fortification2");
-   //const fortification3 = document.getElementById("fortification3");
     //Do you like FOR LOOOOOPS?
 
     //reads the array
@@ -361,29 +391,6 @@ function fillAsm(){
         flyer2.appendChild(opt);
     }
     
-   //Fortification
-    /*1 for (const [index,a] of asmFortification.entries()){
-        const opt = document.createElement('option');
-        opt.id = "fortification";
-        opt.value = [a.slice(0,-1)];
-        opt.innerHTML = a;
-        fortification.appendChild(opt);
-    }
-    /*2 for (const [index,a] of asmFortification.entries()){
-        const opt = document.createElement('option');
-        opt.id = "fortification";
-        opt.value = [a.slice(0,-1)];
-        opt.innerHTML = a;
-        fortification2.appendChild(opt);
-    }
-    /*3for (const [index,a] of asmFortification.entries()){
-        const opt = document.createElement('option');
-        opt.id = "fortification";
-        opt.value = [a.slice(0,-1)];
-        opt.innerHTML = a;
-        fortification3.appendChild(opt);
-    } */
-
 fillasmCost();
 }
 
@@ -433,10 +440,7 @@ function fillasmCost(){
     //flyer
    const flyer = document.getElementById("flCost1");
    const flyer2 = document.getElementById("flCost2");
-    //fort
-   //const fortification = document.getElementById("ftCost1");
-  // const fortification2 = document.getElementById("ftCost2");
-  // const fortification3 = document.getElementById("ftCost3");
+
    //Do you like FOR LOOOOOPS?
 
    //HQ
@@ -806,36 +810,5 @@ document.getElementById('flyer2').addEventListener("change", function () {
     document.getElementById('flCost2').selectedIndex = document.getElementById('flyer2').selectedIndex;
 }, false);
 
-//Fort
-/*for (const [index,a] of asmFortification.entries()){
-    const opt = document.createElement('option');
-    opt.id = "fortification";
-    opt.value = asmFortification[index][1];
-    opt.innerText = asmFortification[index][1];
-    fortification.appendChild(opt);
-}
-document.getElementById('fortification1').addEventListener("change", function () {
-    document.getElementById('ftCost1').selectedIndex = document.getElementById('fortification1').selectedIndex;
-}, false);
-for (const [index,a] of asmFortification.entries()){
-    const opt = document.createElement('option');
-    opt.id = "fortification";
-    opt.value = asmFortification[index][1];
-    opt.innerText = asmFortification[index][1];
-    fortification2.appendChild(opt);
-}
-document.getElementById('fortification2').addEventListener("change", function () {
-    document.getElementById('ftCost2').selectedIndex = document.getElementById('fortification2').selectedIndex;
-}, false);
-for (const [index,a] of asmFortification.entries()){
-    const opt = document.createElement('option');
-    opt.id = "fortification";
-    opt.value = asmFortification[index][1];
-    opt.innerText = asmFortification[index][1];
-    fortification3.appendChild(opt);
-}
-document.getElementById('fortification3').addEventListener("change", function () {
-    document.getElementById('ftCost3').selectedIndex = document.getElementById('fortification3').selectedIndex;
-}, false); */
 
 }

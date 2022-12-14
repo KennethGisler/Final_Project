@@ -11,7 +11,6 @@ import ArmyBuilder.beans.DedicatedTransport;
 import ArmyBuilder.beans.Elites;
 import ArmyBuilder.beans.FastAttack;
 import ArmyBuilder.beans.Flyer;
-import ArmyBuilder.beans.Fortification;
 import ArmyBuilder.beans.HQ;
 import ArmyBuilder.beans.HeavySupport;
 import ArmyBuilder.beans.LordOfWar;
@@ -85,11 +84,6 @@ public class BeanConfiguration {
 		public Elites elites() {
 			Elites e = new Elites();
 			return e;
-		}
-		@Bean
-		public Fortification fortification() {
-			Fortification fort = new Fortification();
-			return fort;
 		}
 		@Bean
 		public Flyer flyer() {

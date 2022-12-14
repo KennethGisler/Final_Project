@@ -37,12 +37,10 @@ public class Unit {
 	private Elites e;
 	@Autowired
 	private Flyer fl;
-	//@Autowired
-	//private Fortification ft;
 	
 	//methods
 	public int getTotal() {
-		int tot = troops.getTotal() + hs.getTotal() + hq.getTotal() + fa.getTotal() + dt.getTotal() + low.getTotal() + e.getTotal();
+		int tot = troops.getTotal() + hs.getTotal() + hq.getTotal() + fa.getTotal() + dt.getTotal() + low.getTotal() + e.getTotal() + fl.getTotal();
 		return tot;
 	}
 }

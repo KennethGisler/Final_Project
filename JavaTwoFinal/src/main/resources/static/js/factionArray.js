@@ -108,14 +108,6 @@ document.getElementById("flyerBox").innerHTML =
 "  <select id ="+"flCost1 "+"name="+"fl.flCost1"+" hidden></select></td>"+
 /*2*/"<td><select id ="+"flyer2 "+"name="+"fl.flyer2"+"></select>"+
 "  <select id ="+"flCost2 "+"name="+"fl.flCost2"+" hidden></select></td>";
-//Fort -- Disabled because error
-/*1"Select fortification: <select id ="+"fortification1 "+"name="+"ft.ft1"+"></select>"+
-"  <select id ="+"ftCost1 "+"name="+"ft.ftCost1"+" hidden></select>"+
-/*2"<select id ="+"fortification2 "+"name="+"ft.ft2"+"></select>"+
-"  <select id ="+"ftCost2 "+"name="+"ft.ftCost2"+" hidden></select>>"+
-/*3"<select id ="+"fortification3 "+"name="+"ft.ft3"+"></select>"+
-"  <select id ="+"ftCost3 "+"name="+"ft.ftCost3"+" hidden></select></br></br>"
-;*/
 //Also erases error if proper option is selected
 document.getElementById("error").innerHTML = "";
 //Now we populate id unitDisplayer with a new function

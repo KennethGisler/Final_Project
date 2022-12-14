@@ -49,7 +49,7 @@ public class WebController {
 		if(repo.findAll().isEmpty()) { //this only matter for the fist user ever made, but i feel as though it is still something good to have.
 			repo.save(u);
 			currentUser = u.getId();
-			System.out.println("The current user is now: " + currentUser); //spits out who is signed in when someone makes a new user
+			System.out.println("The current user is now: " + currentUser + "we are in Get map newUser there was nothing"); //spits out who is signed in when someone makes a new user
 			return "navPage";
 		}else {
 			for(User test : repo.findAll()) { //sees if you've chosen a name that already exists by going threw the list of users and 
@@ -62,7 +62,7 @@ public class WebController {
 		
 		repo.save(u);
 		currentUser = u.getId();
-		System.out.println("The current user is now: " + currentUser); //spits out who is signed in when someone makes a new user
+		System.out.println("The current user is now: " + currentUser + "we are in Get map newUser there was something"); //spits out who is signed in when someone makes a new user
 		return "navPage";
 	}
 	@PostMapping("/newArmy") //starts the process of making a new army! 
@@ -139,6 +139,7 @@ public class WebController {
 		System.out.println("Current user was: " + currentUser); //shows who was last signed in
 		currentUser = (long) -1;
 		System.out.println("Current user is now: " + currentUser); //shows that they are now signed out
+		System.out.println("Loggin out");
 		return "loginPage";
 	}
 	
@@ -168,9 +169,10 @@ public class WebController {
 	@GetMapping("/deleteArmy/{id}") //deletes an army
 	public String deleteArmy(@PathVariable("id") long id, Model model) {
 		
-		Army a = armyRepo.getById(id); //gets the army that the id belongs to
+		Army a = armyRepo.findById(id).orElse(null); //gets the army that the id belongs to
 		User u = repo.findById(currentUser).orElse(null); //get's the current user
 		ArrayList<Long> unitIds = new ArrayList<Long>(); //for all of the army id's
+		ArrayList<Unit> tempUnits = new ArrayList<Unit>();
 		
 		if(u.getUsersArmies().contains(a)) { //sees if the army is in that uses list
 			u.getUsersArmies().remove(a); //removes it from their list
@@ -178,23 +180,26 @@ public class WebController {
 			for(Unit un : a.getRoster()) {
 				unitIds.add(un.getId());
 			}
-			a.setRoster(null);
+			
+			a.setRoster(tempUnits);
 			for(long unitId : unitIds) {
-				Unit temp = unitRepo.getById(unitId);
+				Unit temp = unitRepo.findById(unitId).orElse(null);
 				unitRepo.delete(temp);
 			}
 			
 			armyRepo.delete(a); //delets the entity in the repo
 		}else {
 			System.out.println("You do not own this army, so you can't delete it!"); //if it's not in your list it spits this out
+			 return viewAllInfo(model);
 		}
+		
 		return "navPage";
 	} 
 
 	@GetMapping("/editArmy/{id}") //edit an army
 	public String editArmy(@PathVariable("id") long id, Model model) {
 		
-		Army a = armyRepo.getById(id); //gets the army that the id belongs to
+		Army a = armyRepo.findById(id).orElse(null); //gets the army that the id belongs to
 		User u = repo.findById(currentUser).orElse(null); //get's the current user
 		Unit un; //sets up a unit
 		
